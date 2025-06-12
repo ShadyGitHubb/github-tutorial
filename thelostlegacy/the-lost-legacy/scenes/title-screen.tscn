@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4tse5aijjiki"]
+
+[ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="1_wjkdx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 147.0
+offset_right = 1159.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wjkdx")
+theme_override_font_sizes/font_size = 91
+text = "The Lost Legacy"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 141.0
+offset_right = 1152.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("1_wjkdx")
+theme_override_font_sizes/font_size = 90
+text = "The Lost Legacy"
+horizontal_alignment = 1
