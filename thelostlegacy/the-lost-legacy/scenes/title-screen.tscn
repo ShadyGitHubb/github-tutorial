@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4tse5aijjiki"]
+[gd_scene load_steps=6 format=3 uid="uid://c4tse5aijjiki"]
 
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_efbo4"]
 [ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="1_wjkdx"]
+[ext_resource type="Texture2D" uid="uid://b7psy0f4jig2r" path="res://assets/Play Button.png" id="2_6748d"]
+[ext_resource type="Texture2D" uid="uid://da2fwphogh2vo" path="res://assets/Credits button.png" id="4_5eek6"]
+[ext_resource type="Texture2D" uid="uid://cwf1yviumtmpc" path="res://assets/Quit button.png" id="5_6y0k1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_efbo4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,3 +37,28 @@ theme_override_fonts/font = ExtResource("1_wjkdx")
 theme_override_font_sizes/font_size = 90
 text = "The Lost Legacy"
 horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 480.0
+offset_top = 345.0
+offset_right = 614.0
+offset_bottom = 419.0
+texture_normal = ExtResource("2_6748d")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 464.0
+offset_top = 457.0
+offset_right = 637.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_5eek6")
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
+offset_left = 488.0
+offset_top = 547.0
+offset_right = 615.0
+offset_bottom = 611.0
+texture_normal = ExtResource("5_6y0k1")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_start"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="." method="_credits"]
+[connection signal="pressed" from="CanvasLayer/TextureButton3" to="." method="_quit"]
