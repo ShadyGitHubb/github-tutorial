@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://deushed7q0o65"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_7yc5c"]
+[ext_resource type="Texture2D" uid="uid://d6yyemx5l8cj" path="res://assets/thumbnail_image.png" id="2_6jo02"]
+
+[sub_resource type="Animation" id="Animation_rhpl8"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gk77i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x2brm"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm402"]
+_data = {
+"RESET": SubResource("Animation_gk77i"),
+"fade in": SubResource("Animation_rhpl8"),
+"fade out": SubResource("Animation_x2brm")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7yc5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(584, 282)
+scale = Vector2(2.37, 2.07381)
+texture = ExtResource("2_6jo02")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1161.0
+offset_bottom = 659.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_pm402")
+}
