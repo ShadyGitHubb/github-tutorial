@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://deushed7q0o65"]
 
-[ext_resource type="Script" path="res://scripts/intro.gd" id="1_7yc5c"]
+[ext_resource type="Script" uid="uid://d2ng6pbifp7ph" path="res://scripts/intro.gd" id="1_7yc5c"]
 [ext_resource type="Texture2D" uid="uid://d6yyemx5l8cj" path="res://assets/thumbnail_image.png" id="2_6jo02"]
 
 [sub_resource type="Animation" id="Animation_gk77i"]
@@ -52,9 +52,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pm402"]
 _data = {
-"RESET": SubResource("Animation_gk77i"),
-"fade in": SubResource("Animation_rhpl8"),
-"fade out": SubResource("Animation_x2brm")
+&"RESET": SubResource("Animation_gk77i"),
+&"fade in": SubResource("Animation_rhpl8"),
+&"fade out": SubResource("Animation_x2brm")
 }
 
 [node name="Node2D" type="Node2D"]

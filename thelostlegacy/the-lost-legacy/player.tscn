@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dku6gjxkjo71y"]
+
+[ext_resource type="PackedScene" uid="uid://c4bjh8d38i4yw" path="res://PlayerONLYBOTTOMHALFWITHANIMATION.glb" id="1_4flbx"]
+
+[node name="PlayerONLYBOTTOMHALFWITHANIMATION" instance=ExtResource("1_4flbx")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/2/rotation = Quaternion(-0.264337, -0.0500179, -0.162196, 0.949377)
+bones/3/rotation = Quaternion(0.0685026, 0.0156079, 0.115353, 0.990837)
+bones/4/rotation = Quaternion(-0.12803, -0.0150013, -0.11494, 0.984973)
+bones/5/rotation = Quaternion(-0.0519824, -1.79454e-07, -0.623083, 0.780426)
+bones/7/rotation = Quaternion(-0.622176, -0.180147, 0.718282, -0.253997)
+bones/8/rotation = Quaternion(0.260702, -0.0216517, 0.0907482, 0.960901)
+bones/9/rotation = Quaternion(-0.0515751, -0.0244062, 0.105556, 0.992775)
+bones/10/rotation = Quaternion(0.10098, 0.0223174, -0.195313, 0.975273)
+bones/11/rotation = Quaternion(-0.0499128, -8.06176e-08, -0.598279, 0.799732)
+bones/12/rotation = Quaternion(-0.0222133, 2.28465e-09, -0.266258, 0.963646)
