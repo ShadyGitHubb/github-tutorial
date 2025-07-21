@@ -5,13 +5,16 @@
 [node name="PlayerONLYBOTTOMHALFWITHANIMATION" instance=ExtResource("1_4flbx")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/2/rotation = Quaternion(-0.264337, -0.0500179, -0.162196, 0.949377)
-bones/3/rotation = Quaternion(0.0685026, 0.0156079, 0.115353, 0.990837)
-bones/4/rotation = Quaternion(-0.12803, -0.0150013, -0.11494, 0.984973)
-bones/5/rotation = Quaternion(-0.0519824, -1.79454e-07, -0.623083, 0.780426)
+bones/2/rotation = Quaternion(-0.223825, 0.108835, 0.24075, 0.938135)
+bones/3/rotation = Quaternion(0.0615954, -0.00163758, 0.0203277, 0.997893)
+bones/4/rotation = Quaternion(-0.0939415, 0.0299808, 0.258899, 0.960858)
+bones/5/rotation = Quaternion(-0.0660919, -1.55531e-07, -0.792206, 0.606665)
 bones/7/rotation = Quaternion(-0.622176, -0.180147, 0.718282, -0.253997)
-bones/8/rotation = Quaternion(0.260702, -0.0216517, 0.0907482, 0.960901)
-bones/9/rotation = Quaternion(-0.0515751, -0.0244062, 0.105556, 0.992775)
-bones/10/rotation = Quaternion(0.10098, 0.0223174, -0.195313, 0.975273)
-bones/11/rotation = Quaternion(-0.0499128, -8.06176e-08, -0.598279, 0.799732)
-bones/12/rotation = Quaternion(-0.0222133, 2.28465e-09, -0.266258, 0.963646)
+bones/8/rotation = Quaternion(0.229091, 0.095707, -0.207179, 0.946274)
+bones/9/rotation = Quaternion(-0.0516765, -0.0241872, 0.104342, 0.992904)
+bones/10/rotation = Quaternion(0.100263, 0.0231249, -0.202015, 0.973962)
+bones/11/rotation = Quaternion(-0.0511314, -1.11024e-07, -0.612885, 0.788516)
+bones/12/rotation = Quaternion(0.00139939, 3.12284e-08, 0.0167746, 0.999858)
+
+[node name="Camera3D" type="Camera3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.252086, 0.967705, 0, -0.967705, 0.252086, 0, 1.61946, -0.36687)
