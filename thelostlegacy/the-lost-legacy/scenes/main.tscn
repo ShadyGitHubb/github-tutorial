@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=5 format=3 uid="uid://dbard410k803t"]
+
+[ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
+albedo_color = Color(0.20744, 1, 0.970362, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
+
+[sub_resource type="Environment" id="Environment_o5qli"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-362.289, 0, 0, 0, 0.297872, 0, 0, 0, 225.481, 67.0767, -7.04685, -593.07)
+size = Vector3(0.179321, 1, 0.421203)
+material = SubResource("StandardMaterial3D_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D"]
+transform = Transform3D(15941.4, 0, 0, 0, 15941.4, 0, 0, 0, 15941.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_o5qli")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.3346, -2.99106, -589.734)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o5qli")

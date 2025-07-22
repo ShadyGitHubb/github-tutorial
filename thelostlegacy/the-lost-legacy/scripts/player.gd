@@ -1,28 +1,44 @@
 extends CharacterBody3D
 
+var speed = 5.0
+var sensitivity = 0.003
+var look_up_limit = 80
+var look_down_limit = 80
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@onready var camera = $Camera3D
 
+var pitch = 0
+var yaw = 0
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _process(delta):
+	var mouse_motion = Input.get_last_mouse_velocity()
+	yaw -= mouse_motion.x * sensitivity
+	pitch -= mouse_motion.y * sensitivity
+	pitch = clamp(pitch, -look_down_limit, look_up_limit)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	camera.rotation_degrees.x = pitch
+	rotation_degrees.y = yaw
+
+	var direction = Vector3()
+
+	if Input.is_action_pressed("move_forward"):
+		direction -= transform.basis.z
+		print("forwards")
+	if Input.is_action_pressed("move_backwards"):
+		direction += transform.basis.z
+		print("backwards")
+	if Input.is_action_pressed("move_left"):
+		direction -= transform.basis.x
+		print("left")
+	if Input.is_action_pressed("move_right"):
+		direction += transform.basis.x
+		print("backwards")
+
+	direction = direction.normalized()
+
+	velocity = direction * speed
 
 	move_and_slide()
