@@ -1,13 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://kua8w57oxiw8"]
+[gd_scene load_steps=8 format=3 uid="uid://kua8w57oxiw8"]
+
+[ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_ig7tw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
 albedo_color = Color(0.211765, 1, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(1, 24.4331, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+
 [node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.158561, 0, 0, 0, 0.158561, 0, 0, 0, 0.158561, 0, 1.82544, 0)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(17.455, 0, 0, 0, 0.0418227, 0, 0, 0, 8.17763, 0, 0, 0)
 mesh = SubResource("BoxMesh_7dm0k")
 material = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="Area3D" type="Area3D" parent="CSGMesh3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.59414, 0)
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
