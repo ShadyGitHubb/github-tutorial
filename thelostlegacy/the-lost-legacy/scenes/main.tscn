@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=8 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.20744, 1, 0.970362, 1)
@@ -20,7 +21,7 @@ sky = SubResource("Sky_0wfyh")
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(-362.289, 0, 0, 0, 0.297872, 0, 0, 0, 225.481, 67.0767, -7.04685, -593.07)
+transform = Transform3D(-362.289, 0, 0, 0, 0.297872, 0, 0, 0, 225.481, 8.51892, -7.04685, -2.9195)
 size = Vector3(0.179321, 1, 0.421203)
 material = SubResource("StandardMaterial3D_o5qli")
 
@@ -29,7 +30,39 @@ transform = Transform3D(1, 0, 0, 0, -1.511, -9.22823e-08, 0, 2.28155e-07, -0.611
 shape = SubResource("BoxShape3D_o5qli")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.3346, 3.12662, -589.734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7768, 3.12662, 0.416499)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="crosshair" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cross" type="TextureRect" parent="CanvasLayer/crosshair"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0wfyh")
