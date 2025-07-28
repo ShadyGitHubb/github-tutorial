@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4tse5aijjiki"]
+[gd_scene load_steps=12 format=3 uid="uid://c4tse5aijjiki"]
 
 [ext_resource type="Script" uid="uid://dt3e2xhee53oo" path="res://scripts/title_screen.gd" id="1_efbo4"]
 [ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="1_wjkdx"]
 [ext_resource type="Texture2D" uid="uid://b7psy0f4jig2r" path="res://assets/Play Button.png" id="2_6748d"]
+[ext_resource type="Texture2D" uid="uid://0xblmuy8qlcj" path="res://assets/Pressed Play Button.png" id="4_3jehp"]
 [ext_resource type="Texture2D" uid="uid://da2fwphogh2vo" path="res://assets/Credits button.png" id="4_5eek6"]
 [ext_resource type="Texture2D" uid="uid://cwf1yviumtmpc" path="res://assets/Quit button.png" id="5_6y0k1"]
+[ext_resource type="Texture2D" uid="uid://ck1tm5ju1hxx7" path="res://assets/Hover Play Button.png" id="5_ghdcf"]
+[ext_resource type="Texture2D" uid="uid://c15k3bc68nkap" path="res://assets/Pressed Credits Button.png" id="7_u5hpa"]
+[ext_resource type="Texture2D" uid="uid://dv30pg7qeex8h" path="res://assets/Hover Credits Button.png" id="8_6t2t0"]
+[ext_resource type="Texture2D" uid="uid://bgiaono2p2nhg" path="res://assets/Pressed Quit Button.png" id="10_i0wpw"]
+[ext_resource type="Texture2D" uid="uid://ccrh0el8t3r7b" path="res://assets/Hover Quit Button.png" id="11_imw4g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,6 +50,8 @@ offset_top = 345.0
 offset_right = 614.0
 offset_bottom = 419.0
 texture_normal = ExtResource("2_6748d")
+texture_pressed = ExtResource("4_3jehp")
+texture_hover = ExtResource("5_ghdcf")
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
 offset_left = 464.0
@@ -51,6 +59,8 @@ offset_top = 457.0
 offset_right = 637.0
 offset_bottom = 512.0
 texture_normal = ExtResource("4_5eek6")
+texture_pressed = ExtResource("7_u5hpa")
+texture_hover = ExtResource("8_6t2t0")
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
 offset_left = 488.0
@@ -58,6 +68,8 @@ offset_top = 547.0
 offset_right = 615.0
 offset_bottom = 611.0
 texture_normal = ExtResource("5_6y0k1")
+texture_pressed = ExtResource("10_i0wpw")
+texture_hover = ExtResource("11_imw4g")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
