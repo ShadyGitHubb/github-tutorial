@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="The-Lost-Legacy"
-run/main_scene="res://scenes/title-screen.tscn"
+run/main_scene="uid://deushed7q0o65"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
