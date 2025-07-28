@@ -39,13 +39,17 @@ text = "Credits"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer"]
-offset_left = 15.0
-offset_top = 295.0
-offset_right = 1136.0
-offset_bottom = 334.0
+offset_left = 13.0
+offset_top = 293.0
+offset_right = 1130.0
+offset_bottom = 415.0
 theme_override_fonts/font = ExtResource("2_kvq7h")
-theme_override_font_sizes/font_size = 33
-text = "1. https://www.dafontfree.co/asterix-font-free/ - License: Personal Use Only!"
+theme_override_font_sizes/font_size = 22
+text = "1. https://www.dafontfree.co/asterix-font-free/ - License: Personal Use Only!
+2. Freesound - Walking in Late Afternoon.flac by deleted_user_5437135 Creative Commons 0
+3. HappyTaps.wav by Bigvegie -- https://freesound.org/s/682158/ -- License: Creative Commons 0
+4. Happy Background Music Orchestra (Loop) by Migfus20 -- https://freesound.org/s/561383/ -- License: Attribution 4.0
+5. https://kenney.nl/assets/crosshair-pack Creative Commons 0"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
