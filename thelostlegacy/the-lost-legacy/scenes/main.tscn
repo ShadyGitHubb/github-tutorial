@@ -69,5 +69,3 @@ grow_vertical = 2
 texture = ExtResource("2_0wfyh")
 
 [node name="Node3D" parent="." instance=ExtResource("3_sugp2")]
-
-[node name="Node3D2" parent="." instance=ExtResource("3_sugp2")]
