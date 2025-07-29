@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://puack7hx5abi"]
+[gd_scene load_steps=4 format=3 uid="uid://puack7hx5abi"]
+
+[ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="1_hc512"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g48hp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hc512"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_hc512")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_g48hp")
