@@ -268,5 +268,7 @@ libraries = {
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224, 0, 2.30717, -0.676249)
 
-[node name="InteractCast" type="RayCast3D" parent="."]
-transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 4.10926e-13, 0.00184301, -1.00218, 0.00424108, 3.91062, 0.0004723, 0, 2.22434, 0)
+[node name="InteractCast" type="RayCast3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 0.000414003, 0.383579, -0.997347, 0.00422082, 3.89176, 0.0983002, 0.00325759, 0.0711865, 0.672512)
+collide_with_areas = true

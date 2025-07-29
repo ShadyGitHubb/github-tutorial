@@ -14,6 +14,12 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
+
+	if %InteractCast.is_colliding:
+		var target = %InteractCast.get_collider()
+		
+
+
 	var mouse_motion = Input.get_last_mouse_velocity()
 	yaw -= mouse_motion.x * sensitivity
 	pitch -= mouse_motion.y * sensitivity
@@ -37,7 +43,6 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-	# --- Handle animation based on movement ---
 	if direction != Vector3.ZERO:
 		if not anim_player.is_playing():
 			anim_player.play("ArmatureAction")
