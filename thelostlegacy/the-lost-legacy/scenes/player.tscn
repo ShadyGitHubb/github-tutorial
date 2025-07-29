@@ -266,4 +266,7 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224, 0, 1.61946, -0.36687)
+transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224, 0, 2.30717, -0.676249)
+
+[node name="InteractCast" type="RayCast3D" parent="."]
+transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 4.10926e-13, 0.00184301, -1.00218, 0.00424108, 3.91062, 0.0004723, 0, 2.22434, 0)

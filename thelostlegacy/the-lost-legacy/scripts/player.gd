@@ -13,7 +13,7 @@ var yaw = 0
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _process(delta):
+func _physics_process(delta):
 	var mouse_motion = Input.get_last_mouse_velocity()
 	yaw -= mouse_motion.x * sensitivity
 	pitch -= mouse_motion.y * sensitivity
