@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1stqbyrogtw"]
+
+[ext_resource type="Script" uid="uid://vb12r7i07qyc" path="res://scripts/also_clock_puzzle.gd" id="1_m470g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_58xul"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xm42"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_m470g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_58xul")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("BoxShape3D_3xm42")

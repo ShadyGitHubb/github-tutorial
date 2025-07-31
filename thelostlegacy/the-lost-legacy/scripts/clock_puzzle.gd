@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var clockpuzzle: Node
+
 
 @warning_ignore("unused_parameter")
 func _process(delta: float):
@@ -19,5 +21,6 @@ func on_rotate_button_pressed():
 	print(rotation.y)
 
 	if rotation.y >= deg_to_rad(44.9) and rotation.y <= deg_to_rad(45.1):
-		print("Done")
+		if clockpuzzle.rotation.x >= deg_to_rad(44.9) and clockpuzzle.rotation.x <= deg_to_rad(45.1):
+			print("Done")
 	
