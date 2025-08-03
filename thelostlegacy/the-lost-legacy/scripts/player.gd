@@ -15,8 +15,12 @@ func _ready():
 
 func _physics_process(delta):
 
-	if %InteractCast.is_colliding:
+	%InteractText.hide()
+	if %InteractCast.is_colliding():
 		var target = %InteractCast.get_collider()
+		if target.has_method("interact"):
+			%InteractText.show()
+			print("You can pickup this item")
 		
 
 

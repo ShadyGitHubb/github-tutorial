@@ -272,3 +272,24 @@ transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224
 unique_name_in_owner = true
 transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 0.000414003, 0.383579, -0.997347, 0.00422082, 3.89176, 0.0983002, 0.00325759, 0.0711865, 0.672512)
 collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractText" type="Label" parent="CanvasLayer/BoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Press \"E\" to Interact"
