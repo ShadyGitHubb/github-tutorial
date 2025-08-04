@@ -14,11 +14,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-
-	%InteractText.hide()
-	if %InteractCast.is_colliding():
-		var target = %InteractCast.get_collider()
-		if target.has_method("interact"):
+	if not %InteractCast.is_colliding():
+		%InteractText.hide()
+	elif %InteractCast.is_colliding():
+			var target = %InteractCast.get_collider()
+		#if target.has_method("interact"):
 			%InteractText.show()
 			print("You can pickup this item")
 		

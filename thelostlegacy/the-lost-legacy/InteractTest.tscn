@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmfvu2lc7km5u"]
+
+[ext_resource type="Script" uid="uid://b4wh44owes04" path="res://scripts/csg_box_3d.gd" id="1_ox5si"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56to6"]
+
+[node name="CSGBox3D" type="CSGBox3D"]
+script = ExtResource("1_ox5si")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_56to6")
