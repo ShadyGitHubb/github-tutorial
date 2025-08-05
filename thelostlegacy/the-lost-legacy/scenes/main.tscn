@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=13 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -20,6 +20,12 @@ sky_material = SubResource("ProceduralSkyMaterial_o5qli")
 [sub_resource type="Environment" id="Environment_o5qli"]
 background_mode = 2
 sky = SubResource("Sky_0wfyh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+albedo_color = Color(0.683829, 0, 0.228038, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
+material = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Node3D" type="Node3D"]
 
@@ -81,3 +87,12 @@ script = null
 [node name="Node3D2" parent="Node3D3" instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.58445)
 script = null
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Node3D3"]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_tefeu")
+gravity = Vector3(0, -22.72, 0)
+initial_velocity_min = 6.42
+initial_velocity_max = 10.69
