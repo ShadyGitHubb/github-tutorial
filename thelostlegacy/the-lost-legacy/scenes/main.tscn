@@ -101,11 +101,14 @@ gravity = Vector3(0, -22.72, 0)
 initial_velocity_min = 6.42
 initial_velocity_max = 10.69
 
-[node name="Clockpuzzle" parent="." instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 12.587)
+[node name="Clockpuzzle" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand") instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7227, 0, 12.587)
+script = ExtResource("3_tbgi4")
+hour_hand = NodePath("Hourhand")
+minute_hand = NodePath("Minutehand")
 
-[node name="Hourhand" parent="." instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1111, 2.52433, 11.7424)
+[node name="Minutehand" parent="Clockpuzzle" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.55417, -0.8446)
 
-[node name="Minutehand" parent="." instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1111, 2.53121, 11.7424)
+[node name="Hourhand" parent="Clockpuzzle" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.56105, -0.8446)
