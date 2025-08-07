@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=16 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://puack7hx5abi" path="res://scenes/clock-puzzle.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://d1stqbyrogtw" path="res://scenes/another-clock-puzzle.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://rq6utmehbp4h" path="res://assets/Clockpuzzle.glb" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://bb1m5426ymk4w" path="res://assets/Hourhand.glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cjp2blyk8xe4f" path="res://assets/Minutehand.glb" id="8_choun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.20744, 1, 0.970362, 1)
@@ -77,6 +80,7 @@ grow_vertical = 2
 texture = ExtResource("2_0wfyh")
 
 [node name="Node3D3" type="Node3D" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000699997, 0, 0.0002141)
 script = ExtResource("3_tbgi4")
 hour_hand = NodePath("Node3D")
 minute_hand = NodePath("Node3D2")
@@ -96,3 +100,12 @@ mesh = SubResource("QuadMesh_tefeu")
 gravity = Vector3(0, -22.72, 0)
 initial_velocity_min = 6.42
 initial_velocity_max = 10.69
+
+[node name="Clockpuzzle" parent="." instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 12.587)
+
+[node name="Hourhand" parent="." instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1111, 2.52433, 11.7424)
+
+[node name="Minutehand" parent="." instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1111, 2.53121, 11.7424)
