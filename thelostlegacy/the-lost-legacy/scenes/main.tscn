@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=18 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -29,6 +29,12 @@ albedo_color = Color(0.683829, 0, 0.228038, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
 material = SubResource("StandardMaterial3D_tbgi4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85g3d"]
+size = Vector3(1, 1.48682, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
+size = Vector3(1.99567, 5.71606, 1.99852)
 
 [node name="Node3D" type="Node3D"]
 
@@ -112,3 +118,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.55417, -0.8446)
 
 [node name="Hourhand" parent="Clockpuzzle" instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.56105, -0.8446)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Clockpuzzle"]
+collision_layer = 3
+
+[node name="Area3D" type="Area3D" parent="Clockpuzzle/StaticBody3D"]
+transform = Transform3D(2.04117, 0, 0, 0, 2.04117, 0, 0, 0, 2.04117, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clockpuzzle/StaticBody3D/Area3D"]
+transform = Transform3D(5.6059, 0, 0, 0, 4.91776, 0, 0, 0, 6.78462, 0, 1.19702, 0)
+shape = SubResource("BoxShape3D_85g3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clockpuzzle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542908, 0.709351, -0.0587234)
+shape = SubResource("BoxShape3D_tipki")
+
+[connection signal="area_entered" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_exited"]

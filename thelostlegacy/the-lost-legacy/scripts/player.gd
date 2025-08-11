@@ -6,6 +6,10 @@ var look_up_limit = 80
 var look_down_limit = 80
 @onready var anim_player = $AnimationPlayer
 @onready var camera = $Camera3D
+@onready var interact_cast = %InteractCast
+@onready var interact_text = %InteractText
+var inside_area = false
+var raycast_enabled = false
 
 var pitch = 0
 var yaw = 0
@@ -14,13 +18,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-	if not %InteractCast.is_colliding():
-		%InteractText.hide()
-	elif %InteractCast.is_colliding():
-			var target = %InteractCast.get_collider()
-		#if target.has_method("interact"):
-			%InteractText.show()
+	if raycast_enabled:
+		if not interact_cast.is_colliding():
+			interact_text.hide()
+		else:
+			var target = interact_cast.get_collider()
+			interact_text.show()
 			print("You can pickup this item")
+	else:
+		interact_text.hide()
 		
 
 
@@ -53,3 +59,13 @@ func _physics_process(delta):
 	else:
 		if anim_player.is_playing():
 			anim_player.stop()
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	raycast_enabled = true
+	interact_text.show()
+
+
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	raycast_enabled = false
+	interact_text.hide()
