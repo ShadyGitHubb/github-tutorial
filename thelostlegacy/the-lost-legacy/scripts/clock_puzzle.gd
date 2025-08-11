@@ -2,14 +2,21 @@ extends Node3D
 
 @export var hour_hand: Node
 @export var minute_hand: Node
+var can_rotate_minute = true
+var can_rotate_hour = true
 
 @warning_ignore("unused_parameter")
 func _process(delta: float):
 	# Connect the button's 'pressed' signal to a function in this script
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_accept") and can_rotate_minute:
 		on_rotate_button_pressed(minute_hand, 60)
-	if Input.is_action_just_pressed("ui_cancel"):
+		can_rotate_minute = false
+		$Timer.start()
+		
+	if Input.is_action_pressed("ui_cancel") and can_rotate_hour:
 		on_rotate_button_pressed(hour_hand, 12)
+		can_rotate_hour = false
+		$Timer2.start()
 	
 		
 
@@ -21,10 +28,15 @@ func on_rotate_button_pressed(hand, time):
 
 	# Apply the rotation
 	hand.rotate_object_local(rotation_axis, rotation_amount)
-	#print(rad_to_deg(minute_hand.rotation.y))
-	#print(rad_to_deg(hour_hand.rotation.y))
+	print(rad_to_deg(minute_hand.rotation.z))
+	print(rad_to_deg(hour_hand.rotation.z))
 
-	if minute_hand.rotation.z >= deg_to_rad(44.9) and minute_hand.rotation.z <= deg_to_rad(45.1):
-		if hour_hand.rotation.z >= deg_to_rad(44.9) and hour_hand.rotation.z <= deg_to_rad(45.1):
+	if minute_hand.rotation.z >= deg_to_rad(89.9) and minute_hand.rotation.z <= deg_to_rad(90.1):
+		if hour_hand.rotation.z >= deg_to_rad(-179.9) and hour_hand.rotation.z <= deg_to_rad(0.1):
 			print("Done")
-	
+
+func _on_timer_timeout() -> void:
+	can_rotate_minute = true
+
+func _on_timer_2_timeout() -> void:
+	can_rotate_hour = true

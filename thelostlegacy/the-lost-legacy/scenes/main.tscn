@@ -79,11 +79,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0wfyh")
 
-[node name="Node3D3" type="Node3D" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand")]
+[node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000699997, 0, 0.0002141)
-script = ExtResource("3_tbgi4")
-hour_hand = NodePath("Node3D")
-minute_hand = NodePath("Node3D2")
 
 [node name="Node3D" parent="Node3D3" instance=ExtResource("3_sugp2")]
 script = null
@@ -112,3 +109,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.55417, -0.8446)
 
 [node name="Hourhand" parent="Clockpuzzle" instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.56105, -0.8446)
+
+[node name="Timer" type="Timer" parent="Clockpuzzle"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Clockpuzzle"]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="timeout" from="Clockpuzzle/Timer" to="Clockpuzzle" method="_on_timer_timeout"]
+[connection signal="timeout" from="Clockpuzzle/Timer2" to="Clockpuzzle" method="_on_timer_2_timeout"]
