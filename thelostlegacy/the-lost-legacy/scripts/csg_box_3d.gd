@@ -1,4 +1,6 @@
-extends CSGBox3D
+extends Area3D
 
-func _interact():
-	pass
+
+func interact():
+	print("ineracted")
+	queue_free()

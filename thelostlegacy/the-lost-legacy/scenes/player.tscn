@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://baao1jc01csev"]
+[gd_scene load_steps=9 format=4 uid="uid://baao1jc01csev"]
 
 [ext_resource type="Script" uid="uid://cui8hr6ibawoy" path="res://scripts/player.gd" id="1_ng0wg"]
 
@@ -149,9 +149,13 @@ tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = PackedFloat32Array(0, 1, -0.0245372, -5.62914e-08, -0.294114, 0.955455, 0.0333333, 1, -0.0214077, -5.77991e-08, -0.256602, 0.96628, 0.0666667, 1, -0.0152999, -5.74951e-08, -0.183391, 0.982921, 0.1, 1, -0.00810819, -5.61938e-08, -0.0971876, 0.995233, 0.133333, 1, -0.00185691, -3.77785e-08, -0.0222569, 0.999751, 0.166667, 1, 0.00139939, 3.07853e-08, 0.0167746, 0.999858, 1.2, 1, 0.00139939, 3.17853e-08, 0.0167746, 0.999858, 1.23333, 1, -0.000222687, 3.22919e-08, -0.00266838, 0.999996, 1.26667, 1, -0.0039134, 3.03053e-08, -0.046907, 0.998892, 1.3, 1, -0.00938029, 2.66385e-08, -0.112436, 0.993615, 1.33333, 1, -0.015585, 2.82069e-08, -0.186809, 0.982273, 1.36667, 1, -0.0206798, 2.80561e-08, -0.247877, 0.968571, 1.4, 1, -0.0235019, -1.95057e-08, -0.281704, 0.959214, 1.41667, 1, -0.0245372, -5.1174e-08, -0.294114, 0.955455)
 
+[sub_resource type="Animation" id="Animation_3vyb7"]
+resource_name = "idle"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ciu1"]
 _data = {
-&"ArmatureAction": SubResource("Animation_b25dk")
+&"ArmatureAction": SubResource("Animation_b25dk"),
+&"idle": SubResource("Animation_3vyb7")
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
@@ -271,7 +275,6 @@ transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224
 [node name="InteractCast" type="RayCast3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 0.000414003, 0.383579, -0.997347, 0.00422082, 3.89176, 0.0983002, 0.00325759, -0.00563312, -0.110674)
-target_position = Vector3(0, -2, 0)
 collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true

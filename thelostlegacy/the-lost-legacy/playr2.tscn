@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkapi7h0ufthb"]
+
+[ext_resource type="PackedScene" uid="uid://c4bjh8d38i4yw" path="res://PlayerONLYBOTTOMHALFWITHANIMATION.glb" id="1_j500u"]
+
+[node name="PlayerONLYBOTTOMHALFWITHANIMATION" instance=ExtResource("1_j500u")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/7/rotation = Quaternion(-0.622176, -0.180147, 0.718282, -0.253997)

@@ -4,11 +4,12 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56to6"]
 
-[node name="CSGBox3D" type="CSGBox3D"]
+[node name="Area3D" type="Area3D"]
+collision_layer = 3
 script = ExtResource("1_ox5si")
 
-[node name="Area3D" type="Area3D" parent="."]
-collision_layer = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_56to6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true

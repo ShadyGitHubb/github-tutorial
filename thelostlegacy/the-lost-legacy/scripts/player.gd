@@ -22,8 +22,12 @@ func _physics_process(delta):
 			interact_text.hide()
 		else:
 			var target = interact_cast.get_collider()
+			print(target)
 			interact_text.show()
 			print("You can pickup this item")
+			if not target == null:
+				if Input.is_action_just_pressed("interact") and target.has_method("interact"):
+					target.interact()
 	else:
 		interact_text.hide()
 		
@@ -58,12 +62,3 @@ func _physics_process(delta):
 	else:
 		if anim_player.is_playing():
 			anim_player.stop()
-
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	interact_cast.enabled = true
-	interact_text.show()
-
-func _on_area_3d_area_exited(area: Area3D) -> void:
-	interact_cast.enabled = false
-	interact_text.hide()
