@@ -4,6 +4,7 @@ extends Node3D
 @export var minute_hand: Node
 @export var minute_hand_timer: Node
 @export var hour_hand_timer: Node
+@export var music_box_scene: PackedScene
 var can_rotate_minute = true
 var can_rotate_hour = true
 
@@ -30,12 +31,13 @@ func on_rotate_button_pressed(hand, time):
 
 	# Apply the rotation
 	hand.rotate_object_local(rotation_axis, rotation_amount)
-	print(rad_to_deg(minute_hand.rotation.z))
-	print(rad_to_deg(hour_hand.rotation.z))
+	#print(rad_to_deg(minute_hand.rotation.z))
+	#print(rad_to_deg(hour_hand.rotation.z))
 
 	if minute_hand.rotation.z >= deg_to_rad(89.9) and minute_hand.rotation.z <= deg_to_rad(90.1):
-		if hour_hand.rotation.z >= deg_to_rad(-179.9) and hour_hand.rotation.z <= deg_to_rad(0.1):
-			print("Done")
+		if hour_hand.rotation.z >= deg_to_rad(-0.1) and hour_hand.rotation.z <= deg_to_rad(0.1):
+			var music_box = music_box_scene.instantiate()
+			music_box.position.z = 13.587
 
 func _on_timer_timeout() -> void:
 	can_rotate_minute = true

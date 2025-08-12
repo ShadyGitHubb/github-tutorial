@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=19 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1stqbyrogtw" path="res://scenes/another-clock-puzzle.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://rq6utmehbp4h" path="res://assets/Clockpuzzle.glb" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://bb1m5426ymk4w" path="res://assets/Hourhand.glb" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dspi0h2j6fhka" path="res://scenes/music-box.tscn" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://cjp2blyk8xe4f" path="res://assets/Minutehand.glb" id="8_choun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
@@ -111,6 +112,7 @@ hour_hand = NodePath("Hourhand")
 minute_hand = NodePath("Minutehand")
 minute_hand_timer = NodePath("Timer")
 hour_hand_timer = NodePath("Timer2")
+music_box_scene = ExtResource("7_choun")
 
 [node name="Minutehand" parent="Clockpuzzle" instance=ExtResource("7_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.55417, -0.8446)
