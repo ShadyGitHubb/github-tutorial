@@ -7,6 +7,7 @@ extends Node3D
 @export var music_box_scene: PackedScene
 var can_rotate_minute = true
 var can_rotate_hour = true
+@onready var confetti = $CPUParticles3D
 
 @warning_ignore("unused_parameter")
 func _process(delta: float):
@@ -36,8 +37,12 @@ func on_rotate_button_pressed(hand, time):
 
 	if minute_hand.rotation.z >= deg_to_rad(89.9) and minute_hand.rotation.z <= deg_to_rad(90.1):
 		if hour_hand.rotation.z >= deg_to_rad(-0.1) and hour_hand.rotation.z <= deg_to_rad(0.1):
+			var confetti = $CPUParticles3D
+			confetti.emitting = true
 			var music_box = music_box_scene.instantiate()
-			music_box.position.z = 13.587
+			music_box.position.x = 17.723
+			music_box.position.z = 7.356
+			add_sibling(music_box)
 
 func _on_timer_timeout() -> void:
 	can_rotate_minute = true
