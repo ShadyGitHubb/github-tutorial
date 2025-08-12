@@ -9,7 +9,6 @@ var look_down_limit = 80
 @onready var interact_cast = %InteractCast
 @onready var interact_text = %InteractText
 var inside_area = false
-var raycast_enabled = false
 
 var pitch = 0
 var yaw = 0
@@ -18,7 +17,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-	if raycast_enabled:
+	if interact_cast.enabled:
 		if not interact_cast.is_colliding():
 			interact_text.hide()
 		else:
@@ -62,10 +61,9 @@ func _physics_process(delta):
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	raycast_enabled = true
+	interact_cast.enabled = true
 	interact_text.show()
 
-
 func _on_area_3d_area_exited(area: Area3D) -> void:
-	raycast_enabled = false
+	interact_cast.enabled = false
 	interact_text.hide()

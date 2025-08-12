@@ -271,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976174, 0, 0.0976174, 0.995224
 [node name="InteractCast" type="RayCast3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 0.000414003, 0.383579, -0.997347, 0.00422082, 3.89176, 0.0983002, 0.00325759, -0.00563312, -0.110674)
-target_position = Vector3(0, -5, 0)
+target_position = Vector3(0, -2, 0)
 collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
