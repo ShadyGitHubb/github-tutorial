@@ -85,11 +85,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0wfyh")
 
-[node name="Node3D3" type="Node3D" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand")]
+[node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000699997, 0, 0.0002141)
-script = ExtResource("3_tbgi4")
-hour_hand = NodePath("Node3D")
-minute_hand = NodePath("Node3D2")
 
 [node name="Node3D" parent="Node3D3" instance=ExtResource("3_sugp2")]
 script = null
@@ -107,11 +104,13 @@ gravity = Vector3(0, -22.72, 0)
 initial_velocity_min = 6.42
 initial_velocity_max = 10.69
 
-[node name="Clockpuzzle" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand") instance=ExtResource("6_tipki")]
+[node name="Clockpuzzle" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand", "minute_hand_timer", "hour_hand_timer") instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7227, 0, 12.587)
 script = ExtResource("3_tbgi4")
 hour_hand = NodePath("Hourhand")
 minute_hand = NodePath("Minutehand")
+minute_hand_timer = NodePath("Timer")
+hour_hand_timer = NodePath("Timer2")
 
 [node name="Minutehand" parent="Clockpuzzle" instance=ExtResource("7_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857162, 2.55417, -0.8446)
@@ -133,5 +132,15 @@ shape = SubResource("BoxShape3D_85g3d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542908, 0.709351, -0.0587234)
 shape = SubResource("BoxShape3D_tipki")
 
+[node name="Timer" type="Timer" parent="Clockpuzzle"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Clockpuzzle"]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="area_entered" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_exited"]
+[connection signal="timeout" from="Clockpuzzle/Timer" to="Clockpuzzle" method="_on_timer_timeout"]
+[connection signal="timeout" from="Clockpuzzle/Timer2" to="Clockpuzzle" method="_on_timer_2_timeout"]

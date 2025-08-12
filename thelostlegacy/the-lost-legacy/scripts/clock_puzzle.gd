@@ -2,6 +2,8 @@ extends Node3D
 
 @export var hour_hand: Node
 @export var minute_hand: Node
+@export var minute_hand_timer: Node
+@export var hour_hand_timer: Node
 var can_rotate_minute = true
 var can_rotate_hour = true
 
@@ -11,12 +13,12 @@ func _process(delta: float):
 	if Input.is_action_pressed("ui_accept") and can_rotate_minute:
 		on_rotate_button_pressed(minute_hand, 60)
 		can_rotate_minute = false
-		$Timer.start()
+		minute_hand_timer.start()
 		
 	if Input.is_action_pressed("ui_cancel") and can_rotate_hour:
 		on_rotate_button_pressed(hour_hand, 12)
 		can_rotate_hour = false
-		$Timer2.start()
+		hour_hand_timer.start()
 	
 		
 
