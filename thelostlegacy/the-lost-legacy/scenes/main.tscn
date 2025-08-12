@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=20 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dmfvu2lc7km5u" path="res://scenes/InteractTest.tscn" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://puack7hx5abi" path="res://scenes/clock-puzzle.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="3_tbgi4"]
@@ -27,17 +26,17 @@ sky_material = SubResource("ProceduralSkyMaterial_o5qli")
 background_mode = 2
 sky = SubResource("Sky_0wfyh")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
-albedo_color = Color(0.683829, 0, 0.228038, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
-material = SubResource("StandardMaterial3D_tbgi4")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_85g3d"]
 size = Vector3(0.569611, 0.694337, 0.513245)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
 size = Vector3(1.99567, 5.71606, 1.99852)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+albedo_color = Color(0.683829, 0, 0.228038, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
+material = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Node3D" type="Node3D"]
 
@@ -49,9 +48,6 @@ material = SubResource("StandardMaterial3D_o5qli")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, -1.511, -9.22823e-08, 0, 2.28155e-07, -0.611158, -0.000897422, 0, -0.00149202)
 shape = SubResource("BoxShape3D_o5qli")
-
-[node name="CSGBox3D" parent="CSGBox3D" instance=ExtResource("1_ya4ey")]
-transform = Transform3D(-0.0340375, 0, 0, 0, 3.00554, 0, 0, 0, 0.0426923, 0.00911079, 23.3326, -0.0354005)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7768, 3.12662, 0.416499)
@@ -101,15 +97,6 @@ script = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.58445)
 script = null
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Node3D3"]
-emitting = false
-one_shot = true
-explosiveness = 1.0
-mesh = SubResource("QuadMesh_tefeu")
-gravity = Vector3(0, -22.72, 0)
-initial_velocity_min = 6.42
-initial_velocity_max = 10.69
-
 [node name="Clockpuzzle" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand", "minute_hand_timer", "hour_hand_timer") instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7227, 0, 12.587)
 script = ExtResource("3_tbgi4")
@@ -149,6 +136,20 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="Clockpuzzle"]
 wait_time = 0.1
 one_shot = true
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Clockpuzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0339603, 0, -5.265)
+emitting = false
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_tefeu")
+gravity = Vector3(0, -22.72, 0)
+initial_velocity_min = 6.42
+initial_velocity_max = 10.69
+
+[node name="Node3D" parent="." instance=ExtResource("7_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.723, 0, 7.356)
+visible = false
 
 [connection signal="area_entered" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_exited"]
