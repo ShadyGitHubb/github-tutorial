@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=22 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -33,10 +33,21 @@ size = Vector3(0.569611, 0.694337, 0.513245)
 size = Vector3(1.99567, 5.71606, 1.99852)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
-albedo_color = Color(0.683829, 0, 0.228038, 1)
+albedo_color = Color(1, 1, 0, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 7.3
+billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
 material = SubResource("StandardMaterial3D_tbgi4")
+center_offset = Vector3(0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_choun"]
+
+[sub_resource type="Gradient" id="Gradient_ya4ey"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -143,9 +154,13 @@ emitting = false
 one_shot = true
 explosiveness = 1.0
 mesh = SubResource("QuadMesh_tefeu")
+direction = Vector3(0, 2, 4)
+spread = 60.38
 gravity = Vector3(0, -22.72, 0)
-initial_velocity_min = 6.42
-initial_velocity_max = 10.69
+initial_velocity_min = 38.46
+initial_velocity_max = 76.94
+color_ramp = SubResource("Gradient_choun")
+color_initial_ramp = SubResource("Gradient_ya4ey")
 
 [node name="Node3D" parent="." instance=ExtResource("7_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.723, 0, 7.356)
