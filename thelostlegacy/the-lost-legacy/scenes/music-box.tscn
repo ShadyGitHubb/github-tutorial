@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dspi0h2j6fhka"]
+[gd_scene load_steps=4 format=3 uid="uid://dspi0h2j6fhka"]
+
+[ext_resource type="Script" uid="uid://xfssi7fio3it" path="res://scripts/music_box.gd" id="1_slmrs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0f5aa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slmrs"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_slmrs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_0f5aa")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=21 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="PackedScene" uid="uid://baao1jc01csev" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://puack7hx5abi" path="res://scenes/clock-puzzle.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="3_tbgi4"]
@@ -13,6 +14,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.20744, 1, 0.970362, 1)
+albedo_texture = ExtResource("1_ya4ey")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(0.181824, 1, 0.69043)
@@ -122,9 +124,6 @@ transform = Transform3D(2.04117, 0, 0, 0, 2.04117, 0, 0, 0, 2.04117, 0, 0, 0)
 transform = Transform3D(5.6059, 0, 0, 0, 4.91776, 0, 0, 0, 6.78462, 0.0406227, 1.11298, -0.299187)
 shape = SubResource("BoxShape3D_85g3d")
 
-[node name="NPC" parent="Clockpuzzle/StaticBody3D/Area3D/CollisionShape3D" instance=ExtResource("9_85g3d")]
-transform = Transform3D(-0.0961824, 0.00491038, 0.00790385, 0.00516733, 0.0920113, 0, -0.00786875, 0.000401722, -0.0966114, 0, 0, -2.5889)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clockpuzzle/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0542908, 0.709351, -0.0587234)
 shape = SubResource("BoxShape3D_tipki")
@@ -150,6 +149,9 @@ initial_velocity_max = 10.69
 [node name="Node3D" parent="." instance=ExtResource("7_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.723, 0, 7.356)
 visible = false
+
+[node name="NPC" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(-1.10058, 0.0561875, 0.0904405, 0.0518696, 0.923608, 0, -0.108971, 0.00556327, -1.33793, 17.8056, 2.27178, -23.8762)
 
 [connection signal="area_entered" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Clockpuzzle/StaticBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_exited"]
