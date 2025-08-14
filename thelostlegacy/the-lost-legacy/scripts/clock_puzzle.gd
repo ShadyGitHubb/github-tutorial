@@ -25,10 +25,10 @@ func _process(delta: float):
 		
 
 func on_rotate_button_pressed(hand, time):
-	# Define the rotation amount (e.g., 90 degrees around the Y-axis)
+	# Define the rotation amount (e.g., 90 degrees around the Z-axis)
 	var starting_rotation = hand.rotation.z
 	var rotation_amount = deg_to_rad(360/time)
-	var rotation_axis = Vector3(0, 0, 1) # Rotate around the Y-axis
+	var rotation_axis = Vector3(0, 0, 1) # Rotate around the Z-axis
 
 	# Apply the rotation
 	hand.rotate_object_local(rotation_axis, rotation_amount)
