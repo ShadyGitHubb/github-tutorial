@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://baao1jc01csev"]
+[gd_scene load_steps=9 format=4 uid="uid://cyjwn0vyyirfr"]
 
-[ext_resource type="Script" uid="uid://cui8hr6ibawoy" path="res://scripts/player.gd" id="1_ng0wg"]
+[ext_resource type="Script" uid="uid://cui8hr6ibawoy" path="res://scripts/player.gd" id="1_lttm1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f256n"]
-size = Vector3(0.241608, 1, 0.319946)
+[sub_resource type="BoxShape3D" id="BoxShape3D_lttm1"]
+size = Vector3(1.10437, 2.52246, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38e0j"]
 resource_name = "Material"
@@ -11,7 +11,7 @@ cull_mode = 2
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3vyb7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_c08b3"]
 resource_name = "PlayerONLYBOTTOMHALFWITHANIMATION_Cube"
 _surfaces = [{
 "aabb": AABB(-1.50986, -3.91239, -0.945327, 3.01973, 6.20593, 1.94533),
@@ -31,7 +31,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_g2els"]
+[sub_resource type="Skin" id="Skin_agjl5"]
 resource_name = "Skin"
 bind_count = 13
 bind/0/name = &"Bone"
@@ -229,15 +229,15 @@ _data = {
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_ng0wg")
+script = ExtResource("1_lttm1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(9.96958, 0, 0, 0, 12.5812, 0, 0, 0, 4.79899, -0.112115, 0, 0.2932)
-shape = SubResource("BoxShape3D_f256n")
+transform = Transform3D(2.72288, 0, 0, 0, 2.72288, 0, 0, 0, 2.72288, -0.0440408, -0.76123, 0)
+shape = SubResource("BoxShape3D_lttm1")
 
 [node name="Armature" type="Node3D" parent="."]
 
-[node name="Skeleton3D2" type="Skeleton3D" parent="Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -330,10 +330,9 @@ bones/12/position = Vector3(5.58794e-09, 0.485114, -8.28877e-08)
 bones/12/rotation = Quaternion(0.00139939, 2.91361e-08, 0.0167746, 0.999858)
 bones/12/scale = Vector3(1, 1, 1)
 
-[node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D2"]
-mesh = SubResource("ArrayMesh_3vyb7")
-skin = SubResource("Skin_g2els")
-skeleton = NodePath("../../Skeleton3D2")
+[node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_c08b3")
+skin = SubResource("Skin_agjl5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
