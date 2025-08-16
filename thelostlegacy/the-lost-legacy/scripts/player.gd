@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var speed = 5.0
+var speed = 9.0
 var sensitivity = 0.002
 var look_up_limit = 80
 var look_down_limit = 80
