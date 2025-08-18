@@ -37,7 +37,12 @@ size = Vector3(0.569611, 0.694337, 0.513245)
 size = Vector3(1.99567, 5.71606, 1.99852)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
-albedo_color = Color(0.683829, 0, 0.228038, 1)
+albedo_color = Color(1, 1, 0.227451, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 7.3
+billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_tefeu"]
 material = SubResource("StandardMaterial3D_tbgi4")
@@ -144,12 +149,15 @@ one_shot = true
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Clockpuzzle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0339603, 0, -5.265)
 emitting = false
+amount = 15
 one_shot = true
-explosiveness = 1.0
+explosiveness = 0.85
 mesh = SubResource("QuadMesh_tefeu")
+direction = Vector3(0, 2, 4)
+spread = 60.38
 gravity = Vector3(0, -22.72, 0)
-initial_velocity_min = 6.42
-initial_velocity_max = 10.69
+initial_velocity_min = 38.46
+initial_velocity_max = 76.94
 
 [node name="Node3D" parent="." instance=ExtResource("7_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.723, 0, 7.356)
