@@ -32,6 +32,9 @@ func _physics_process(delta):
 	else:
 		interact_text.hide()
 
+
+
+
 	# mouse look
 	var m = Input.get_last_mouse_velocity()
 	yaw -= m.x * sensitivity
