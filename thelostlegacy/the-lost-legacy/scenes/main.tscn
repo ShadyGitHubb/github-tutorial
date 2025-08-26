@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=23 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
-[ext_resource type="Shader" uid="uid://b57wimieho1ut" path="res://scenes/main.gdshader" id="3_a8y0u"]
+[ext_resource type="Material" uid="uid://b68pi4n8k0k7f" path="res://assets/day_sky.tres" id="3_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://puack7hx5abi" path="res://scenes/clock-puzzle.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://d1stqbyrogtw" path="res://scenes/another-clock-puzzle.tscn" id="4_jyhfs"]
@@ -22,51 +22,8 @@ albedo_texture = ExtResource("1_ya4ey")
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(0.181824, 1, 0.69043)
 
-[sub_resource type="Curve" id="Curve_a8y0u"]
-_data = [Vector2(0, 0.0361058), 0.0, 1.63176, 0, 0, Vector2(1, 1), 0.301288, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_jkv2x"]
-curve = SubResource("Curve_a8y0u")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jbj1t"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_muem4"]
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_jbj1t")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_dp3eg"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0ld40"]
-seamless = true
-noise = SubResource("FastNoiseLite_dp3eg")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkv2x"]
-shader = ExtResource("3_a8y0u")
-shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_0ld40")
-shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_muem4")
-shader_parameter/cloud_curves = SubResource("CurveTexture_jkv2x")
-shader_parameter/clouds_samples = 16
-shader_parameter/shadow_sample = 4
-shader_parameter/clouds_density = 0.5
-shader_parameter/clouds_scale = 1.0
-shader_parameter/clouds_smoothness = 0.035
-shader_parameter/clouds_light_color = Color(0, 0, 0, 1)
-shader_parameter/clouds_shadow_intensity = 1.0
-shader_parameter/high_clouds_density = 0.0
-shader_parameter/top_color = Color(0.276281, 0.653524, 0.650944, 1)
-shader_parameter/bottom_color = Color(1, 1, 1, 1)
-shader_parameter/sun_scatter = Color(1, 1, 1, 1)
-shader_parameter/astro_tint = Color(0, 0, 0, 1)
-shader_parameter/astro_scale = 1.0
-shader_parameter/astro_intensity = 1.0
-shader_parameter/stars_intensity = 0.0
-shader_parameter/shooting_stars_intensity = 0.0
-shader_parameter/shooting_star_tint = Color(0, 0, 0, 1)
-
 [sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ShaderMaterial_jkv2x")
+sky_material = ExtResource("3_a8y0u")
 
 [sub_resource type="Environment" id="Environment_o5qli"]
 background_mode = 2
@@ -124,6 +81,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="cross" type="TextureRect" parent="CanvasLayer/crosshair"]
 custom_minimum_size = Vector2(64, 64)
@@ -140,6 +98,7 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0wfyh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000699997, 0, 0.0002141)
