@@ -4,7 +4,7 @@ extends Node3D
 @export var minute_hand: Node
 @export var minute_hand_timer: Node
 @export var hour_hand_timer: Node
-@export var music_box_scene: PackedScene
+@export var key: PackedScene
 var can_rotate_minute = true
 var can_rotate_hour = true
 @onready var confetti = $CPUParticles3D
@@ -39,10 +39,10 @@ func on_rotate_button_pressed(hand, time):
 		if hour_hand.rotation.z >= deg_to_rad(-0.1) and hour_hand.rotation.z <= deg_to_rad(0.1):
 			var confetti = $CPUParticles3D
 			confetti.emitting = true
-			var music_box = music_box_scene.instantiate()
-			music_box.position.x = 17.723
-			music_box.position.z = 7.356
-			add_sibling(music_box)
+			var key = key.instantiate()
+			key.position.x = 17.723
+			key.position.z = 7.356
+			add_sibling(key)
 
 func _on_timer_timeout() -> void:
 	can_rotate_minute = true
