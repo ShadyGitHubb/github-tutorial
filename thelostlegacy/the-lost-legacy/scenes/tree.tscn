@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://o35u2frex3it"]
+[gd_scene load_steps=5 format=3 uid="uid://o35u2frex3it"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ict6q"]
 size = Vector3(1.02295, 1.81348, 1)
@@ -8,6 +8,8 @@ albedo_color = Color(0.188235, 0.717647, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avsvi"]
 albedo_color = Color(0.588235, 0.294118, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avsvi"]
 
 [node name="Area3D" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004673, -1.19209e-07, 2.90871e-05)
@@ -32,3 +34,7 @@ material = SubResource("StandardMaterial3D_ict6q")
 transform = Transform3D(0.49815, 0, 0, 0, 0.49815, 0, 0, 0, 0.49815, 0, 0.911133, 0)
 height = 3.82227
 material = SubResource("StandardMaterial3D_avsvi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CSGCylinder3D"]
+transform = Transform3D(4.43216, 0, 0, 0, 4.43216, 0, 0, 0, 4.43216, -0.0358424, 1.07232, 0)
+shape = SubResource("BoxShape3D_avsvi")
