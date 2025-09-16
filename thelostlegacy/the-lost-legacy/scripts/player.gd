@@ -32,9 +32,6 @@ func _physics_process(delta):
 	else:
 		interact_text.hide()
 
-
-
-
 	# mouse look
 	var m = Input.get_last_mouse_velocity()
 	yaw -= m.x * sensitivity
@@ -43,6 +40,11 @@ func _physics_process(delta):
 	camera.rotation_degrees.x = pitch
 	rotation_degrees.y = yaw
 
+	# dialogue
+	if Input.is_action_just_pressed("ui_accept"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
+		return
+	
 	# movement
 	var dir = Vector3.ZERO
 	if Input.is_action_pressed("move_forward"):
