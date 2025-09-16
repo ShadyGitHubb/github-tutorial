@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=24 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dmfvu2lc7km5u" path="res://scenes/InteractTest.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://6ncjq6k63jh3" path="res://scenes/NPC.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://o35u2frex3it" path="res://scenes/tree.tscn" id="14_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://b6vyrhcavq676" path="res://assets/Main Scene.mp3" id="15_jkv2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.20744, 1, 0.970362, 1)
@@ -1708,6 +1709,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8651, 0.154878, -25.344)
 
 [node name="Area3D513" parent="Trees" instance=ExtResource("14_a8y0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5061, 0.154878, -23.3268)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_jkv2x")
+autoplay = true
 
 [connection signal="timeout" from="Clockpuzzle/Timer" to="Clockpuzzle" method="_on_timer_timeout"]
 [connection signal="timeout" from="Clockpuzzle/Timer2" to="Clockpuzzle" method="_on_timer_2_timeout"]
