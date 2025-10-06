@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://6ncjq6k63jh3"]
+[gd_scene load_steps=9 format=4 uid="uid://6ncjq6k63jh3"]
 
 [ext_resource type="Script" uid="uid://1t5bpi8725ni" path="res://scripts/NPC.gd" id="1_mhefn"]
+[ext_resource type="PackedScene" uid="uid://d2soee5cmolhb" path="res://dialogue/actionable.tscn" id="2_6xvi5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvbb7"]
 resource_name = "Material"
@@ -93,6 +94,9 @@ _data = {
 &"ArmatureAction": SubResource("Animation_lcpp6")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ktgr7"]
+size = Vector3(2.6415405, 8.026886, 2.9178925)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(0.802129, -0.0647068, 0, 0.0647068, 0.802129, 0, 0, 0, 0.804734, 0, 0, 0)
 script = ExtResource("1_mhefn")
@@ -154,3 +158,9 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_fc3wm")
 }
+
+[node name="Actionable" parent="." instance=ExtResource("2_6xvi5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(0.9957312, 0.09230119, 0, -0.09230119, 0.9957312, 0, 0, 0, 1, -0.022721782, 2.250108, -0.0847244)
+shape = SubResource("BoxShape3D_ktgr7")
