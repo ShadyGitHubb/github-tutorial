@@ -9164,7 +9164,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.34732, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.24026, -6.51457, 90.73594)
 
 [node name="Red Rose4" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.34732, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 259.13507, -6.4733124, 43.898495)
 
 [node name="Black Rose4" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.24026, -6.51457, 97.74601)
@@ -9173,7 +9173,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.24026, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.34732, -6.4733124, 52.919807)
 
 [node name="Black Rose5" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.24026, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.33038, -6.51457, 86.51555)
 
 [node name="Red Rose6" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.34732, -6.4733124, 59.92988)
@@ -9212,7 +9212,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.49243, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.38538, -6.51457, 90.73594)
 
 [node name="Red Rose12" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.49243, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 264.28018, -6.4733124, 43.898495)
 
 [node name="Black Rose12" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.38538, -6.51457, 97.74601)
@@ -9221,7 +9221,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.38538, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.49243, -6.4733124, 52.919807)
 
 [node name="Black Rose13" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.38538, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.43237, -6.51457, 81.37145)
 
 [node name="Red Rose14" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.49243, -6.4733124, 59.92988)
@@ -9260,7 +9260,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.5498, -
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.44275, -6.51457, 90.73594)
 
 [node name="Red Rose20" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.5498, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 268.33755, -6.4733124, 43.898495)
 
 [node name="Black Rose20" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.44275, -6.51457, 97.74601)
@@ -9269,7 +9269,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.44275, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.5498, -6.4733124, 52.919807)
 
 [node name="Black Rose21" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.44275, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.51282, -6.51457, 77.31488)
 
 [node name="Red Rose22" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 272.5498, -6.4733124, 59.92988)
@@ -9308,7 +9308,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.69492, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.58786, -6.51457, 90.73594)
 
 [node name="Red Rose28" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.69492, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 273.48267, -6.4733124, 43.898495)
 
 [node name="Black Rose28" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.58786, -6.51457, 97.74601)
@@ -9317,7 +9317,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.58786, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.69492, -6.4733124, 52.919807)
 
 [node name="Black Rose29" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.58786, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.61484, -6.51457, 72.17078)
 
 [node name="Red Rose30" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 277.69492, -6.4733124, 59.92988)
@@ -9356,7 +9356,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 283.0194, -
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 282.91235, -6.51457, 90.73594)
 
 [node name="Red Rose36" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 283.0194, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 278.80716, -6.4733124, 43.898495)
 
 [node name="Black Rose36" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 282.91235, -6.51457, 97.74601)
@@ -9365,7 +9365,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 282.91235, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 283.0194, -6.4733124, 52.919807)
 
 [node name="Black Rose37" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 282.91235, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.7204, -6.51457, 66.84733)
 
 [node name="Red Rose38" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 283.0194, -6.4733124, 59.92988)
@@ -9404,7 +9404,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.16452, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.05746, -6.51457, 90.73594)
 
 [node name="Red Rose44" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.16452, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 283.95227, -6.4733124, 43.898495)
 
 [node name="Black Rose44" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.05746, -6.51457, 97.74601)
@@ -9413,7 +9413,7 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.05746, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.16452, -6.4733124, 52.919807)
 
 [node name="Black Rose45" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.05746, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.8224, -6.51457, 61.703228)
 
 [node name="Red Rose46" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.16452, -6.4733124, 59.92988)
@@ -9434,100 +9434,100 @@ transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.16452, 
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.05746, -6.51457, 70.22174)
 
 [node name="Red Rose49" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 80.44408)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 266.74127, -6.4733124, 106.16981)
 
 [node name="Black Rose49" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 77.0428)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 270.1354, -6.51457, 105.92456)
 
 [node name="Red Rose50" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 87.45415)
+transform = Transform3D(0.18057154, 0, -6.26856, 0, 6.27116, 0, 6.26856, 0, 0.18057154, 273.6211, -6.4733124, 101.42031)
 
 [node name="Black Rose50" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 84.05287)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 263.1311, -6.51457, 106.20956)
 
 [node name="Red Rose51" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 94.137215)
+transform = Transform3D(0.18057154, 0, -6.26856, 0, 6.27116, 0, 6.26856, 0, 0.18057154, 266.9408, -6.4733124, 101.61275)
 
 [node name="Black Rose51" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 90.73594)
+transform = Transform3D(0.18057154, 0, -6.26856, 0, 6.27116, 0, 6.26856, 0, 0.18057154, 270.3376, -6.51457, 101.4078)
 
 [node name="Red Rose52" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 101.147285)
+transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 288.00964, -6.4733124, 43.898495)
 
 [node name="Black Rose52" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 97.74601)
+transform = Transform3D(0.18057154, 0, -6.26856, 0, 6.27116, 0, 6.26856, 0, 0.18057154, 263.3304, -6.51457, 101.60965)
 
 [node name="Red Rose53" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 52.919807)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 294.2428, -6.4733124, 105.050804)
 
 [node name="Black Rose53" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 258.90283, -6.51457, 57.646652)
 
 [node name="Red Rose54" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 59.92988)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 287.23853, -6.4733124, 105.3358)
 
 [node name="Black Rose54" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 56.528603)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 290.63263, -6.51457, 105.09055)
 
 [node name="Red Rose55" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 66.612946)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 280.56097, -6.4733124, 105.607506)
 
 [node name="Black Rose55" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 63.21167)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 283.95508, -6.51457, 105.36226)
 
 [node name="Red Rose56" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.2219, -6.4733124, 73.62302)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 273.5567, -6.4733124, 105.892494)
 
 [node name="Black Rose56" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 292.11484, -6.51457, 70.22174)
+transform = Transform3D(0.25495383, 0, -6.2659755, 0, 6.27116, 0, 6.2659755, 0, 0.25495383, 276.9508, -6.51457, 105.64725)
 
 [node name="Red Rose57" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 80.44408)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 258.52652, -6.4733124, 46.961216)
 
 [node name="Black Rose57" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 77.0428)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 261.92926, -6.51457, 46.999)
 
 [node name="Red Rose58" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 87.45415)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 257.6804, -6.4733124, 104.037125)
 
 [node name="Black Rose58" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 84.05287)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 257.70593, -6.51457, 107.43999)
 
 [node name="Red Rose59" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 94.137215)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 257.8405, -6.4733124, 97.35599)
 
 [node name="Black Rose59" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 90.73594)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 257.86606, -6.51457, 100.75884)
 
 [node name="Red Rose60" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 101.147285)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 258.00848, -6.4733124, 90.34791)
 
 [node name="Black Rose60" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 97.74601)
+transform = Transform3D(-6.269359, 0, 0.15026402, 0, 6.271161, 0, -0.15026402, 0, -6.269359, 258.03403, -6.51457, 93.75076)
 
 [node name="Red Rose61" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 52.919807)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 286.02585, -6.4733124, 48.132534)
 
 [node name="Black Rose61" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 49.51853)
+transform = Transform3D(0.124329925, 0, 6.2699275, 0, 6.27116, 0, -6.2699275, 0, 0.124329925, 259.00485, -6.51457, 52.502556)
 
 [node name="Red Rose62" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 59.92988)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 279.02213, -6.4733124, 47.834213)
 
 [node name="Black Rose62" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 56.528603)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 282.42487, -6.51457, 47.871998)
 
 [node name="Red Rose63" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 66.612946)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 272.34512, -6.4733124, 47.549812)
 
 [node name="Black Rose63" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 63.21167)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 275.74786, -6.51457, 47.587597)
 
 [node name="Red Rose64" parent="Roses" instance=ExtResource("21_pm3ni")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.367, -6.4733124, 73.62302)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 265.3414, -6.4733124, 47.25149)
 
 [node name="Black Rose64" parent="Roses" instance=ExtResource("22_y6deb")]
-transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 297.25995, -6.51457, 70.22174)
+transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 268.74414, -6.51457, 47.289276)
 
 [connection signal="timeout" from="Clockpuzzle/Timer" to="Clockpuzzle" method="_on_timer_timeout"]
 [connection signal="timeout" from="Clockpuzzle/Timer2" to="Clockpuzzle" method="_on_timer_2_timeout"]
