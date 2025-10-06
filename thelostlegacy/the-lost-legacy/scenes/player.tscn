@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://baao1jc01csev"]
+[gd_scene load_steps=10 format=4 uid="uid://baao1jc01csev"]
 
 [ext_resource type="Script" uid="uid://cui8hr6ibawoy" path="res://scripts/player.gd" id="1_ng0wg"]
 
@@ -228,6 +228,9 @@ _data = {
 &"walk": SubResource("Animation_ye80o")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3vyb7"]
+radius = 0.23177566
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_ng0wg")
 
@@ -369,3 +372,13 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Press \"E\" to Interact"
+
+[node name="Direction" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00017520785, 2.3052015, -1.6015661)
+
+[node name="ActionableFinder" type="Area3D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Direction/ActionableFinder"]
+shape = SubResource("SphereShape3D_3vyb7")
