@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dx172bcpor7qe"]
 
-[ext_resource type="Texture2D" uid="uid://8o1nft3qhtpd" path="res://assets/Red_rose_DEMOAtlas_Flowerpack.png" id="1_rdysk"]
+[ext_resource type="Texture2D" uid="uid://ij3k1o8ntf60" path="res://assets/Black_rose_DEMOAtlas_Flowerpack.png" id="1_rdysk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcyf6"]
 resource_name = "Material.001"
