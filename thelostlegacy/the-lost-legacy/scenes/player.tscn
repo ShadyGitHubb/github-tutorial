@@ -353,6 +353,16 @@ collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 
+[node name="Direction" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.995224, 0.0976174, 0, -0.0976174, 0.995224, -0.00017520785, -0.09228611, -0.92070556)
+
+[node name="ActionableFinder" type="Area3D" parent="Camera3D/Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Direction/ActionableFinder"]
+shape = SubResource("SphereShape3D_3vyb7")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
@@ -372,13 +382,3 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Press \"E\" to Interact"
-
-[node name="Direction" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00017520785, 2.3052015, -1.6015661)
-
-[node name="ActionableFinder" type="Area3D" parent="Direction"]
-collision_layer = 0
-collision_mask = 16
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Direction/ActionableFinder"]
-shape = SubResource("SphereShape3D_3vyb7")

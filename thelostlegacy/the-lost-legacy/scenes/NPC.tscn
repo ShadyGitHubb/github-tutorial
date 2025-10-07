@@ -95,7 +95,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ktgr7"]
-size = Vector3(2.6415405, 8.026886, 2.9178925)
+size = Vector3(2.6415405, 8.026886, 3.4174423)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(0.802129, -0.0647068, 0, 0.0647068, 0.802129, 0, 0, 0, 0.804734, 0, 0, 0)
@@ -162,5 +162,5 @@ libraries = {
 [node name="Actionable" parent="." instance=ExtResource("2_6xvi5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
-transform = Transform3D(0.9957312, 0.09230119, 0, -0.09230119, 0.9957312, 0, 0, 0, 1, -0.022721782, 2.250108, -0.0847244)
+transform = Transform3D(0.9957312, 0.09230119, 0, -0.09230119, 0.9957312, 0, 0, 0, 1, -0.022721782, 2.250108, -0.33449933)
 shape = SubResource("BoxShape3D_ktgr7")
