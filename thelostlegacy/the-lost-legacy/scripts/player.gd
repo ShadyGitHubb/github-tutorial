@@ -20,6 +20,8 @@ var cam_base_pos = Vector3.ZERO
 var cam_roll = 0.0
 
 func _ready():
+	get_tree().get_root().get_node("Player").set_process_input(true)
+	get_tree().get_root().get_node("Player").set_physics_process(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam_base_pos = camera.position
 
@@ -45,9 +47,13 @@ func _physics_process(delta):
 	if not dialogue_cast == null:
 		var dialogue_option = false
 		var dialogue_target = dialogue_cast.get_collider()
+		var cannot_move = false
+		if cannot_move == true:
+			get_tree().get_root().get_node("Player").set_process_input(false)
+			get_tree().get_root().get_node("Player").set_physics_process(false)
 		if dialogue_cast.is_colliding():
-			if dialogue_cast == dialogue_target.has_layer("Actionables"):
-				dialogue_option = true
+			#if dialogue_cast == dialogue_target.has_mask("Actionables"):
+			dialogue_option = true
 			if Input.is_action_just_pressed("ui_accept") and dialogue_option == true:
 				DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
 				return
