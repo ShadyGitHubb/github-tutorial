@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4tse5aijjiki"]
+[gd_scene load_steps=14 format=3 uid="uid://c4tse5aijjiki"]
 
 [ext_resource type="Script" uid="uid://dt3e2xhee53oo" path="res://scripts/title_screen.gd" id="1_efbo4"]
 [ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="1_wjkdx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bgiaono2p2nhg" path="res://assets/Pressed Quit Button.png" id="10_i0wpw"]
 [ext_resource type="Texture2D" uid="uid://ccrh0el8t3r7b" path="res://assets/Hover Quit Button.png" id="11_imw4g"]
 [ext_resource type="AudioStream" uid="uid://dalpd2a0slqsk" path="res://assets/Title Screen.mp3" id="12_ghdcf"]
+[ext_resource type="Texture2D" uid="uid://f1jbhcmgvg1j" path="res://assets/Cartoon TItle Screen.jpg" id="13_u5hpa"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -75,6 +76,10 @@ texture_hover = ExtResource("11_imw4g")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ghdcf")
 autoplay = true
+
+[node name="CartoonTItleScreen" type="Sprite2D" parent="."]
+position = Vector2(556, 334)
+texture = ExtResource("13_u5hpa")
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_start"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="." method="_credits"]
