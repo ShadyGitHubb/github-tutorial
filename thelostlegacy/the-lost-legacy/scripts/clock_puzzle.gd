@@ -40,8 +40,8 @@ func on_rotate_button_pressed(hand, time):
 			var confetti = $CPUParticles3D
 			confetti.emitting = true
 			var key = key.instantiate()
-			key.position.x = 17.723
-			key.position.z = 7.356
+			key.position.x = 46.806
+			key.position.z = 58.069
 			add_sibling(key)
 
 func _on_timer_timeout() -> void:

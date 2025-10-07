@@ -291,7 +291,7 @@ bones/4/rotation = Quaternion(9.9211e-10, 4.37114e-08, 4.37114e-08, 1)
 bones/4/scale = Vector3(1, 1, 1)
 
 [node name="Spooky_Gate_Dmg_L" type="BoneAttachment3D" parent="Spooky_Gate_Dmg/Skeleton3D"]
-transform = Transform3D(0.972708, 1.45781e-09, 0.232033, -1.88271e-08, 1, 7.26424e-08, -0.232033, -7.50283e-08, 0.972708, 3.30212, 1.00848, -0.00962278)
+transform = Transform3D(0.97270805, 1.4578347e-09, 0.23203236, 8.833361e-09, 1, -4.3313417e-08, -0.23203236, 4.4180936e-08, 0.97270805, 3.3021176, 1.0084776, -0.0096227005)
 bone_name = "Spooky_Gate_Dmg_L"
 bone_idx = 2
 
@@ -299,12 +299,14 @@ bone_idx = 2
 mesh = SubResource("ArrayMesh_i744v")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_L"]
-transform = Transform3D(0.97535, 1.55654e-08, -0.220663, -1.64935e-08, 1, -2.3656e-09, 0.220663, 5.9451e-09, 0.97535, -1.24252, 2.15161, -0.452903)
+[node name="StaticBody3D" type="StaticBody3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_L"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_L/StaticBody3D"]
+transform = Transform3D(0.97535, 1.5565398e-08, -0.220663, -1.6493498e-08, 1, -2.3655993e-09, 0.220663, 5.945104e-09, 0.97535, -1.24252, 2.15161, -0.45290303)
 shape = SubResource("BoxShape3D_i744v")
 
 [node name="Spooky_Gate_Dmg_R" type="BoneAttachment3D" parent="Spooky_Gate_Dmg/Skeleton3D"]
-transform = Transform3D(1, -3.57006e-14, 7.10543e-15, 4.64218e-14, 1, 1.17225e-07, 2.13163e-14, -1.17225e-07, 1, -3.37147, 1.00782, -1.31316e-06)
+transform = Transform3D(1, -5.330805e-13, 5.258016e-13, 5.3290705e-13, 1, -1.9842368e-09, -5.258016e-13, 1.9842161e-09, 1, -3.3714707, 1.0078186, -1.2032688e-06)
 bone_name = "Spooky_Gate_Dmg_R"
 bone_idx = 4
 
@@ -312,8 +314,10 @@ bone_idx = 4
 mesh = SubResource("ArrayMesh_uwq7d")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_R"]
-transform = Transform3D(0.999953, -8.29062e-09, -0.00966898, 8.24032e-09, 1, -5.24972e-09, 0.00966901, 5.16804e-09, 0.999953, 1.36721, 2.15161, -0.115913)
+[node name="StaticBody3D" type="StaticBody3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_R"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spooky_Gate_Dmg/Skeleton3D/Spooky_Gate_Dmg_R/StaticBody3D"]
+transform = Transform3D(0.999953, -8.29062e-09, -0.00966898, 8.24032e-09, 1, -5.24972e-09, 0.00966901, 5.16804e-09, 0.999953, 1.3672101, 2.15161, -0.115912996)
 shape = SubResource("BoxShape3D_i744v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
