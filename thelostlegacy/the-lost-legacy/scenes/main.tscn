@@ -176,7 +176,7 @@ initial_velocity_max = 76.94
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.805954, -0.16808271, 58.068897)
 visible = false
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("11_ya4ey")]
+[node name="Player" parent="." instance=ExtResource("11_ya4ey")]
 transform = Transform3D(-0.99911, 0, 0.0421896, 0, 1, 0, -0.0421896, 0, -0.99911, 14.9351, -0.267011, -338.86816)
 
 [node name="Area3D" parent="." instance=ExtResource("12_eb6dy")]
