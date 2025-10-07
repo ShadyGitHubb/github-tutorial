@@ -46,7 +46,7 @@ func _physics_process(delta):
 		var dialogue_option = false
 		var dialogue_target = dialogue_cast.get_collider()
 		if dialogue_cast.is_colliding():
-			if dialogue_cast == dialogue_target.has_mask("Actionables"):
+			if dialogue_cast == dialogue_target.has_layer("Actionables"):
 				dialogue_option = true
 			if Input.is_action_just_pressed("ui_accept") and dialogue_option == true:
 				DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
