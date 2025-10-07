@@ -9,6 +9,7 @@ var look_down_limit = 80
 @onready var camera = $Camera3D
 @onready var interact_cast = %InteractCast
 @onready var interact_text = %InteractText
+@onready var dialogue_cast = %DialogueCast
 
 var pitch = 0.0
 var yaw = 0.0
@@ -41,9 +42,15 @@ func _physics_process(delta):
 	rotation_degrees.y = yaw
 
 	# dialogue
-	if Input.is_action_just_pressed("ui_accept"):
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
-		return
+	if not dialogue_cast == null:
+		var dialogue_option = false
+		var dialogue_target = dialogue_cast.get_collider()
+		if dialogue_cast.is_colliding():
+			if dialogue_cast == dialogue_target.has_mask("Actionables"):
+				dialogue_option = true
+			if Input.is_action_just_pressed("ui_accept") and dialogue_option == true:
+				DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
+				return
 	
 	# movement
 	var dir = Vector3.ZERO
