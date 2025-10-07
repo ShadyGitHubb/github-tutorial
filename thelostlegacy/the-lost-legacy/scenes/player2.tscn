@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cyjwn0vyyirfr"]
+[gd_scene load_steps=10 format=4 uid="uid://cyjwn0vyyirfr"]
 
 [ext_resource type="Script" uid="uid://cui8hr6ibawoy" path="res://scripts/player.gd" id="1_lttm1"]
 
@@ -228,6 +228,9 @@ _data = {
 &"walk": SubResource("Animation_ye80o")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_lttm1"]
+radius = 0.23177566
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_lttm1")
 
@@ -348,6 +351,24 @@ transform = Transform3D(-0.999991, 0.0165854, 2.00308e-06, 0.000414003, 0.383579
 collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="Direction" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.995224, 0.0976174, 0, -0.0976174, 0.995224, -0.00017520785, -0.09228611, -0.92070556)
+
+[node name="ActionableFinder" type="Area3D" parent="Camera3D/Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Direction/ActionableFinder"]
+shape = SubResource("SphereShape3D_lttm1")
+
+[node name="DialogueCast" type="RayCast3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05767536, -0.58800423)
+target_position = Vector3(0, -0.24, -1.6)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
