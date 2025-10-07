@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bj8mnyr84p8qi"]
+[gd_scene load_steps=7 format=4 uid="uid://bj8mnyr84p8qi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilvq2"]
 resource_name = "lambert2"
@@ -48,6 +48,9 @@ length = 0.0333333
 _data = {
 &"Take 001": SubResource("Animation_30usl")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5nlq"]
+size = Vector3(0.18652344, 1.3657227, 1.6362)
 
 [node name="Node3D" type="Node3D"]
 
@@ -105,3 +108,7 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_gbo7w")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029785156, 0.6779785, 0.60417175)
+shape = SubResource("BoxShape3D_u5nlq")

@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dys7pomy8l0yx"]
+[gd_scene load_steps=6 format=4 uid="uid://bhw2yxb1smu0k"]
 
-[ext_resource type="Texture2D" uid="uid://bsdymsfil0fk3" path="res://assets/House_Texture.png" id="1_hsd6d"]
+[ext_resource type="Texture2D" uid="uid://bsdymsfil0fk3" path="res://assets/House_Texture.png" id="1_w7uf8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wluur"]
 resource_name = "End_Damage"
 cull_mode = 2
-albedo_texture = ExtResource("1_hsd6d")
+albedo_texture = ExtResource("1_w7uf8")
 roughness = 0.9
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t0hrk"]

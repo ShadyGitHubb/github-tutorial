@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=33 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b633afnb061pt" path="res://scenes/Gate.tscn" id="20_jscy8"]
 [ext_resource type="PackedScene" uid="uid://dx172bcpor7qe" path="res://scenes/red-rose.tscn" id="21_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://hubt2uony54j" path="res://scenes/black-rose.tscn" id="22_y6deb"]
+[ext_resource type="PackedScene" uid="uid://dys7pomy8l0yx" path="res://scenes/pedestal.tscn" id="23_pm3ni"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.20744, 1, 0.970362, 1)
@@ -9528,6 +9529,9 @@ transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -
 
 [node name="Black Rose64" parent="Roses" instance=ExtResource("22_y6deb")]
 transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -0.26687396, 268.74414, -6.51457, 47.289276)
+
+[node name="Node3D2" parent="." instance=ExtResource("23_pm3ni")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 335.97974, -6.473, 9.742)
 
 [connection signal="timeout" from="Clockpuzzle/Timer" to="Clockpuzzle" method="_on_timer_timeout"]
 [connection signal="timeout" from="Clockpuzzle/Timer2" to="Clockpuzzle" method="_on_timer_2_timeout"]
