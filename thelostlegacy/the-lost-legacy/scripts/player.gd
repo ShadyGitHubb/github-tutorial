@@ -20,8 +20,8 @@ var cam_base_pos = Vector3.ZERO
 var cam_roll = 0.0
 
 func _ready():
-	get_tree().get_root().get_node("Player").set_process_input(true)
-	get_tree().get_root().get_node("Player").set_physics_process(true)
+	set_process_input(true)
+	set_physics_process(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam_base_pos = camera.position
 
