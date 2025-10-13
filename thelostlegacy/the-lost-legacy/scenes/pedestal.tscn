@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dys7pomy8l0yx"]
+[gd_scene load_steps=7 format=4 uid="uid://dys7pomy8l0yx"]
 
 [ext_resource type="Texture2D" uid="uid://bsdymsfil0fk3" path="res://assets/House_Texture.png" id="1_hsd6d"]
+[ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="2_aedhk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wluur"]
 resource_name = "End_Damage"
@@ -55,3 +56,55 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 2.06381, -0.0223389)
 shape = SubResource("BoxShape3D_vgg7g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 641.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Label2" type="Label" parent="Control/CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.061631944
+anchor_bottom = 0.3919753
+offset_left = -28.0
+offset_top = 160.0
+offset_right = 1121.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aedhk")
+theme_override_font_sizes/font_size = 47
+text = "In a shadowed garden where midnight and sunset meet,
+The blooms whisper secrets in pairs complete.
+Dark as a raven, bright as fire’s glow,
+Equally they gather—how many, do you know?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+anchors_preset = -1
+anchor_right = -0.15104167
+anchor_bottom = 0.050925925
+offset_left = -17.0
+offset_top = 152.0
+offset_right = 1351.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("2_aedhk")
+theme_override_font_sizes/font_size = 47
+text = "In a shadowed garden where midnight and sunset meet,
+The blooms whisper secrets in pairs complete.
+Dark as a raven, bright as fire’s glow,
+Equally they gather—how many, do you know?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 376.0
+offset_right = 764.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("2_aedhk")
+theme_override_font_sizes/font_size = 40
