@@ -1,4 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://b633afnb061pt"]
+[gd_scene load_steps=18 format=4 uid="uid://b633afnb061pt"]
+
+[ext_resource type="Script" uid="uid://d0qlvee0dewlw" path="res://scripts/gate.gd" id="1_uwq7d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5vok"]
 resource_name = "Iron"
@@ -249,7 +251,8 @@ _data = {
 &"Windy": SubResource("Animation_p87ku")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Area3D"]
+script = ExtResource("1_uwq7d")
 
 [node name="Spooky_Gate_Dmg" type="Node3D" parent="."]
 
@@ -266,7 +269,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 2.38419e-07, 6.39488e-14, -1.42109e-14, -1.19209e-07, 1, 2.38419e-07, -1, -1.19209e-07, 3.26439, 0.0221674, -0.0857931)
 bones/1/enabled = true
 bones/1/position = Vector3(3.26439, 0.0221674, -0.0857931)
-bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42937e-08, 0.707107)
+bones/1/rotation = Quaternion(-0.45452008, -0.54167515, 0.5416751, 0.45451912)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Spooky_Gate_Dmg_L"
 bones/2/parent = 1
@@ -280,7 +283,7 @@ bones/3/parent = 0
 bones/3/rest = Transform3D(1, 2.38419e-07, -8.74228e-08, 8.74228e-08, -1.19209e-07, 1, 2.38419e-07, -1, -1.19209e-07, -3.32446, 0.0221674, -0.0857941)
 bones/3/enabled = true
 bones/3/position = Vector3(-3.32446, 0.0221674, -0.0857941)
-bones/3/rotation = Quaternion(-0.707107, -1.15202e-07, -5.33851e-08, 0.707107)
+bones/3/rotation = Quaternion(-0.4545199, 0.541675, -0.5416749, 0.45451987)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Spooky_Gate_Dmg_R"
 bones/4/parent = 3
@@ -291,7 +294,7 @@ bones/4/rotation = Quaternion(9.9211e-10, 4.37114e-08, 4.37114e-08, 1)
 bones/4/scale = Vector3(1, 1, 1)
 
 [node name="Spooky_Gate_Dmg_L" type="BoneAttachment3D" parent="Spooky_Gate_Dmg/Skeleton3D"]
-transform = Transform3D(0.97270805, 1.4578347e-09, 0.23203236, 8.833361e-09, 1, -4.3313417e-08, -0.23203236, 4.4180936e-08, 0.97270805, 3.3021176, 1.0084776, -0.0096227005)
+transform = Transform3D(0.059598714, 8.9330564e-07, -0.9982224, 8.382217e-07, 1, 9.820892e-07, 0.9982224, -9.2679585e-07, 0.059598714, 3.2891467, 1.0084777, 0.06484125)
 bone_name = "Spooky_Gate_Dmg_L"
 bone_idx = 2
 
@@ -306,7 +309,7 @@ transform = Transform3D(0.97535, 1.5565398e-08, -0.220663, -1.6493498e-08, 1, -2
 shape = SubResource("BoxShape3D_i744v")
 
 [node name="Spooky_Gate_Dmg_R" type="BoneAttachment3D" parent="Spooky_Gate_Dmg/Skeleton3D"]
-transform = Transform3D(1, -5.330805e-13, 5.258016e-13, 5.3290705e-13, 1, -1.9842368e-09, -5.258016e-13, 1.9842161e-09, 1, -3.3714707, 1.0078186, -1.2032688e-06)
+transform = Transform3D(-0.1736469, -2.2326805e-07, 0.98480797, 9.1005155e-08, 1, 2.6592699e-07, -0.98480797, 8.575011e-08, -0.1736469, -3.3381288, 1.0078186, 0.07231342)
 bone_name = "Spooky_Gate_Dmg_R"
 bone_idx = 4
 
@@ -324,3 +327,4 @@ shape = SubResource("BoxShape3D_i744v")
 libraries = {
 &"": SubResource("AnimationLibrary_kfuu4")
 }
+autoplay = "Close_Both"

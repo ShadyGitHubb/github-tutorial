@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://dspi0h2j6fhka"]
+[gd_scene load_steps=6 format=4 uid="uid://dspi0h2j6fhka"]
+
+[ext_resource type="Script" uid="uid://xfssi7fio3it" path="res://scripts/key.gd" id="1_yk2u2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slmrs"]
 size = Vector3(0.499893, 0.109924, 0.986935)
@@ -38,6 +40,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bwx8t")
 
 [node name="Area3D" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_yk2u2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0180259, 0.00453782, -0.242737)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=33 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://ckqi8qeuqpp4t" path="res://scenes/small-house.tscn" id="17_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://6ersvehttl4k" path="res://scenes/signpost.tscn" id="18_yc10j"]
 [ext_resource type="PackedScene" uid="uid://bj8mnyr84p8qi" path="res://scenes/fence.tscn" id="19_jscy8"]
-[ext_resource type="Script" uid="uid://d0qlvee0dewlw" path="res://scripts/gate.gd" id="19_y6deb"]
 [ext_resource type="PackedScene" uid="uid://b633afnb061pt" path="res://scenes/Gate.tscn" id="20_jscy8"]
 [ext_resource type="PackedScene" uid="uid://dx172bcpor7qe" path="res://scenes/red-rose.tscn" id="21_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://hubt2uony54j" path="res://scenes/black-rose.tscn" id="22_y6deb"]
@@ -173,7 +172,7 @@ gravity = Vector3(0, -22.72, 0)
 initial_velocity_min = 38.46
 initial_velocity_max = 76.94
 
-[node name="Node3D" parent="." instance=ExtResource("7_choun")]
+[node name="Key" parent="." instance=ExtResource("7_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.805954, -0.16808271, 58.068897)
 visible = false
 
@@ -10098,7 +10097,6 @@ transform = Transform3D(4.9782205, 0, 0.07101314, 0, 5.0000005, 0, -0.049265407,
 
 [node name="Gate" parent="." instance=ExtResource("20_jscy8")]
 transform = Transform3D(-2.6226834e-07, 0, -6.0000005, 0, 6, 0, 6.0000005, 0, -2.6226834e-07, 213.843, -4, -42.816)
-script = ExtResource("19_y6deb")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.11452, -6.7669015, -41.906757)
