@@ -251,7 +251,7 @@ _data = {
 &"Windy": SubResource("Animation_p87ku")
 }
 
-[node name="Node3D" type="Area3D"]
+[node name="Area3D" type="Area3D"]
 script = ExtResource("1_uwq7d")
 
 [node name="Spooky_Gate_Dmg" type="Node3D" parent="."]
@@ -327,4 +327,3 @@ shape = SubResource("BoxShape3D_i744v")
 libraries = {
 &"": SubResource("AnimationLibrary_kfuu4")
 }
-autoplay = "Close_Both"
