@@ -52,7 +52,10 @@ text = "1. https://www.dafontfree.co/asterix-font-free/ - License: Personal Use 
 2. Freesound - Walking in Late Afternoon.flac by deleted_user_5437135 Creative Commons 0
 3. HappyTaps.wav by Bigvegie -- https://freesound.org/s/682158/ -- License: Creative Commons 0
 4. Happy Background Music Orchestra (Loop) by Migfus20 -- https://freesound.org/s/561383/ -- License: Attribution 4.0
-5. https://kenney.nl/assets/crosshair-pack Creative Commons 0"
+5. https://kenney.nl/assets/crosshair-pack Creative Commons 0
+6. https://greyfroggames.itch.io/spooky-halloween-gate
+7. https://emilulz.itch.io/low-poly-flowers
+8. https://swampwitch32.itch.io/village-assets"
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]

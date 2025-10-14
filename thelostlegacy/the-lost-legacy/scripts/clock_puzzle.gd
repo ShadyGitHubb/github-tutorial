@@ -33,9 +33,8 @@ func on_rotate_button_pressed(hand, time):
 
 	# Apply the rotation
 	hand.rotate_object_local(rotation_axis, rotation_amount)
-	#print(rad_to_deg(minute_hand.rotation.z))
-	#print(rad_to_deg(hour_hand.rotation.z))
-
+	
+	# Check if the user has solved the clock puzzle correctly or not
 	if minute_hand.rotation.z >= deg_to_rad(89.9) and minute_hand.rotation.z <= deg_to_rad(90.1):
 		if hour_hand.rotation.z >= deg_to_rad(-0.1) and hour_hand.rotation.z <= deg_to_rad(0.1):
 			var confetti = $CPUParticles3D
