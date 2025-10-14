@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dys7pomy8l0yx"]
+[gd_scene load_steps=10 format=4 uid="uid://dys7pomy8l0yx"]
 
 [ext_resource type="Texture2D" uid="uid://bsdymsfil0fk3" path="res://assets/House_Texture.png" id="1_hsd6d"]
+[ext_resource type="Script" uid="uid://t5358dvq8bp3" path="res://scenes/pedestal.gd" id="1_vgg7g"]
 [ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="2_aedhk"]
+[ext_resource type="Texture2D" uid="uid://cldl77mo2rqbg" path="res://assets/Family Photo.png" id="4_khilp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wluur"]
 resource_name = "End_Damage"
@@ -44,7 +46,16 @@ shadow_mesh = SubResource("ArrayMesh_t0hrk")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgg7g"]
 size = Vector3(2.09665, 4.0152, 2.21362)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_khilp"]
+size = Vector3(2.2544556, 4.267578, 2.0292358)
+
+[node name="Node3D" type="Area3D" node_paths=PackedStringArray("ui", "input_field", "roses_sprite")]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_vgg7g")
+ui = NodePath("CanvasLayer/Control")
+input_field = NodePath("CanvasLayer/Control/TextEdit")
+roses_sprite = NodePath("Sprite3D")
 
 [node name="End_Damaged" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33314, 0)
@@ -57,19 +68,40 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 2.06381, -0.0223389)
 shape = SubResource("BoxShape3D_vgg7g")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 641.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-visible = false
-
-[node name="Label2" type="Label" parent="Control/CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.061631944
-anchor_bottom = 0.3919753
+anchor_left = -0.15104167
+anchor_right = -0.15104167
+anchor_bottom = 0.050925925
+offset_left = 71.69792
+offset_top = 159.0
+offset_right = 1439.6979
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_aedhk")
+theme_override_font_sizes/font_size = 47
+text = "In a shadowed garden where midnight and sunset meet,
+The blooms whisper secrets in pairs complete.
+Dark as a raven, bright as fire’s glow,
+Equally they gather—how many, do you know?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.003478261
+anchor_top = -0.014040561
+anchor_right = 0.05815366
+anchor_bottom = 0.37793472
 offset_left = -27.0
 offset_top = 166.0
 offset_right = 1122.0
@@ -84,25 +116,7 @@ Equally they gather—how many, do you know?"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/CanvasLayer"]
-anchors_preset = -1
-anchor_left = -0.15104167
-anchor_right = -0.15104167
-anchor_bottom = 0.050925925
-offset_left = 72.0
-offset_top = 159.0
-offset_right = 1440.0
-offset_bottom = 326.0
-theme_override_fonts/font = ExtResource("2_aedhk")
-theme_override_font_sizes/font_size = 47
-text = "In a shadowed garden where midnight and sunset meet,
-The blooms whisper secrets in pairs complete.
-Dark as a raven, bright as fire’s glow,
-Equally they gather—how many, do you know?"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextEdit" type="TextEdit" parent="Control"]
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 333.0
 offset_top = 376.0
@@ -110,3 +124,13 @@ offset_right = 764.0
 offset_bottom = 446.0
 theme_override_fonts/font = ExtResource("2_aedhk")
 theme_override_font_sizes/font_size = 40
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065582275, 2.038086, -0.1368103)
+shape = SubResource("BoxShape3D_khilp")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.0324106, -1.125541)
+texture = ExtResource("4_khilp")
+
+[connection signal="text_set" from="CanvasLayer/Control/TextEdit" to="." method="_answer"]
