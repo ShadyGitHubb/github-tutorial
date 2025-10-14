@@ -64,6 +64,7 @@ offset_right = 1150.0
 offset_bottom = 641.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+visible = false
 
 [node name="Label2" type="Label" parent="Control/CanvasLayer"]
 anchors_preset = -1
@@ -85,6 +86,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/CanvasLayer"]
 anchors_preset = -1
+anchor_left = -0.15104167
 anchor_right = -0.15104167
 anchor_bottom = 0.050925925
 offset_left = -17.0
