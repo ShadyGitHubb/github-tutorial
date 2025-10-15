@@ -1,22 +1,29 @@
 extends Control
 
+const MAIN_SCENE_PATH : String = "res://scenes/main.tscn"
+const CREDITS_SCENE_PATH : String = "res://scenes/credits-page.tscn"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-# Bring the user from the title screen to the main game.
 func _start():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	if _is_scene_path_valid(MAIN_SCENE_PATH):
+		get_tree().change_scene_to_file(MAIN_SCENE_PATH)
+	else:
+		print("Error: Main scene path invalid.")
 
-# Bring the user from the title screen to the credits page.
 func _credits():
-	get_tree().change_scene_to_file("res://scenes/credits-page.tscn")
+	if _is_scene_path_valid(CREDITS_SCENE_PATH):
+		get_tree().change_scene_to_file(CREDITS_SCENE_PATH)
+	else:
+		print("Error: Credits scene path invalid.")
 
-# Allow the user to quit and close the program.
 func _quit():
-	get_tree().quit()
+	if Engine.is_editor_hint():
+		print("Quit requested in editor, ignored.")
+	else:
+		get_tree().quit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _is_scene_path_valid(path: String) -> bool:
+	# Basic check for empty or malformed path (example only)
+	return path != "" and path.ends_with(".tscn")
