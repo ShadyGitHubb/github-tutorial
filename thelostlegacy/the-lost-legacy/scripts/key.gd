@@ -4,16 +4,22 @@ extends Area3D
 const SUCCESS_PICKUP_MSG: String = "Key picked up successfully."
 const DEBUG_INTERACT_MSG: String = "Player interacted with key."
 const WARNING_NO_GLOBAL: String = "Global script missing or key_held variable not found."
+const GLOBAL_NODE_PATH: String = "/root/Global"
 
 # === INTERACTION FUNCTION ===
 func interact() -> void:
-	# --- VALIDATION: Ensure Global is available ---
+	# --- VALIDATION: Ensure Global singleton exists ---
 	if not Engine.has_singleton("Global"):
 		push_warning(WARNING_NO_GLOBAL)
 		return
 
-	var global_ref: Node = get_node_or_null("/root/Global")
-	if global_ref == null or not global_ref.has_variable("key_held"):
+	# --- VALIDATION: Attempt to retrieve Global node ---
+	var global_ref: Node = get_node_or_null(GLOBAL_NODE_PATH)
+	if global_ref == null:
+		push_warning(WARNING_NO_GLOBAL)
+		return
+	
+	if not global_ref.has_variable("key_held"):
 		push_warning(WARNING_NO_GLOBAL)
 		return
 
