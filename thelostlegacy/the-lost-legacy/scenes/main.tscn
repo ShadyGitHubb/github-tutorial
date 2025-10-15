@@ -181,6 +181,7 @@ transform = Transform3D(-0.99911, 0, 0.0421896, 0, 1, 0, -0.0421896, 0, -0.99911
 
 [node name="Area3D" parent="." instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -353.5791)
+script = null
 
 [node name="Trees" type="Node3D" parent="."]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 0.004673, -6.01113, -375.85934)
@@ -10491,7 +10492,6 @@ transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -
 
 [node name="Pedestal" parent="." instance=ExtResource("23_pm3ni")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 335.97974, -6.473, 9.742)
-visible = false
 
 [node name="Houses" type="Node" parent="."]
 

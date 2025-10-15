@@ -4,7 +4,7 @@ extends Area3D
 const SUCCESS_PICKUP_MSG: String = "Key picked up successfully."
 const DEBUG_INTERACT_MSG: String = "Player interacted with key."
 const WARNING_NO_GLOBAL: String = "Global script missing or key_held variable not found."
-const GLOBAL_NODE_PATH: String = "/root/Global"
+const GLOBAL_NODE_PATH: String = "res://scripts/global.gd"
 
 # === INTERACTION FUNCTION ===
 func interact() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://dys7pomy8l0yx"]
 
 [ext_resource type="Texture2D" uid="uid://bsdymsfil0fk3" path="res://assets/House_Texture.png" id="1_hsd6d"]
-[ext_resource type="Script" uid="uid://t5358dvq8bp3" path="res://scenes/pedestal.gd" id="1_vgg7g"]
+[ext_resource type="Script" uid="uid://t5358dvq8bp3" path="res://scripts/pedestal.gd" id="1_vgg7g"]
 [ext_resource type="FontFile" uid="uid://ctm3f7uvcjens" path="res://assets/Asterix-p7pDy.ttf" id="2_aedhk"]
 [ext_resource type="Texture2D" uid="uid://cldl77mo2rqbg" path="res://assets/Family Photo.png" id="4_khilp"]
 
