@@ -1,61 +1,64 @@
-extends CharacterBody3D
+extends Area3D
 
 # === CONSTANTS (no magic strings) ===
-# Dialogue defaults and warnings for missing data.
+# Defaults and warnings for safer behaviour.
 const DEFAULT_START_NODE: String = "start"
 const WARNING_NO_DIALOGUE: String = "Dialogue resource not set!"
-const WARNING_FAILED_BALLOON: String = "Failed to open dialogue balloon."
-const WARNING_NO_FINISH_SIGNAL: String = "Dialogue balloon has no valid finish signal."
+const WARNING_NO_BALLOON: String = "Failed to open dialogue balloon."
+const WARNING_NO_FINISH_SIGNAL: String = "Dialogue balloon has no finish signal."
 
-# Small cooldown to prevent opening multiple balloons back-to-back.
+# Cooldown so the player can’t reopen the balloon immediately after closing.
 const TALK_COOLDOWN: float = 0.5
 
 
 # === EXPORTED VARIABLES ===
-# Dialogue resource reference and starting node name.
-@export var dialogue: DialogueResource
+# Dialogue resource to use and the starting node id.
+@export var dialogue_resource: DialogueResource
 @export var start_node: String = DEFAULT_START_NODE
 
 
 # === STATE ===
-# Tracks if a dialogue is currently open and blocks re-entry briefly after close.
+# Prevents opening multiple balloons at once and handles post-close cooldown.
 var is_talking: bool = false
 var talk_cooldown_left: float = 0.0
 
 
 # === LIFECYCLE ===
-# Tick down the cooldown so interact() can work again shortly after closing.
+# Count down the anti-spam cooldown.
 func _process(delta: float) -> void:
 	if talk_cooldown_left > 0.0:
-		talk_cooldown_left = max(talk_cooldown_left - delta, 0.0)
+		talk_cooldown_left = max(0.0, talk_cooldown_left - delta)
 
 
-# === DIALOGUE INTERACTION FUNCTION ===
-# Starts a conversation with the player when interacted with.
+# === INTERACTION ENTRYPOINT ===
+# Called by the player when the raycast hits this node and the user presses Interact.
 func interact() -> void:
-	# Invalid cases guarded: missing resource, already talking, or cooling down.
-	if dialogue == null:
+	# --- VALIDATION: Dialogue data must exist and game must be ready to talk ---
+	if dialogue_resource == null:
 		push_warning(WARNING_NO_DIALOGUE)
 		return
 	if is_talking or talk_cooldown_left > 0.0:
 		return
+	if Global.in_dialogue:
+		return
 
-	# Use a safe default if the provided start node is empty.
+	# Fallback to a safe default start node.
 	if start_node.is_empty():
 		start_node = DEFAULT_START_NODE
 
-	# Open the dialogue balloon.
+	# --- START DIALOGUE BALLOON ---
 	is_talking = true
 	Global.in_dialogue = true
-	var balloon: Node = DialogueManager.show_dialogue_balloon(dialogue, start_node)
 
-	# If the balloon failed to spawn, reset state gracefully.
+	var balloon: Node = DialogueManager.show_dialogue_balloon(dialogue_resource, start_node)
+
+	# --- VALIDATION: Ensure balloon was created ---
 	if balloon == null:
-		push_warning(WARNING_FAILED_BALLOON)
+		push_warning(WARNING_NO_BALLOON)
 		_reset_dialogue_state()
 		return
 
-	# Connect whichever "finished" signal exists (covers different addon versions).
+	# --- CONNECT END EVENTS SAFELY (cover addon variants) ---
 	if balloon.has_signal("dialogue_finished"):
 		balloon.dialogue_finished.connect(_on_dialogue_end)
 	elif balloon.has_signal("tree_exited"):
@@ -66,14 +69,19 @@ func interact() -> void:
 
 
 # === CLEANUP ===
-# Called when the dialogue finishes; returns control to the player.
+# Resets flags when the dialogue sequence ends.
 func _on_dialogue_end() -> void:
 	_reset_dialogue_state()
 
 
 # === INTERNAL UTILITY ===
-# Centralised reset keeps code DRY and handles cooldown start.
+# Centralised reset to keep code DRY and readable.
 func _reset_dialogue_state() -> void:
 	is_talking = false
 	Global.in_dialogue = false
 	talk_cooldown_left = TALK_COOLDOWN
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		

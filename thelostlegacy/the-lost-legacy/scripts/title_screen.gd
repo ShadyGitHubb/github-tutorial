@@ -6,7 +6,8 @@ const CREDITS_SCENE_PATH: String = "res://scenes/credits-page.tscn"
 
 func _ready() -> void:
 	# Show the mouse cursor when this UI is ready
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	pass
 
 func _start() -> void:
 	# Load and switch to the main gameplay scene, if valid

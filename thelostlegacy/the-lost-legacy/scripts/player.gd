@@ -65,7 +65,7 @@ func _ready() -> void:
 
 	set_process_input(true)
 	set_physics_process(true)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if camera != null:
 		cam_base_pos = camera.position
 
