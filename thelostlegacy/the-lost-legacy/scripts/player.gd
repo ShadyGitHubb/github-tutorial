@@ -20,7 +20,6 @@ const ROLL_LERP: float = 0.1
 const INTERACT_PROMPT: String = "Press [E] to interact"
 const ANIM_IDLE: String = "idle"
 const ANIM_WALK: String = "walk"
-const ANIM_RUN: String = "run"
 
 # Input names (so we can validate against InputMap)
 const ACTION_MOVE_FWD := "move_forward"
@@ -60,9 +59,7 @@ var cooldown_timer: float = 0.0
 # === INITIALISATION ===
 # Prepare player input and mouse control when the scene loads.
 func _ready() -> void:
-	# Validate required nodes & inputs (robustness)
-	_validate_setup()
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_process_input(true)
 	set_physics_process(true)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -183,8 +180,6 @@ func _handle_movement(delta: float) -> void:
 		cam_roll = lerp(cam_roll, target_roll, ROLL_LERP)
 		camera.rotation_degrees.z = cam_roll
 
-	# Switch between walk, run, and idle animations (validate names)
-	_play_movement_animation(direction.length())
 
 
 # === NEARBY INTERACTABLES ===
@@ -208,47 +203,11 @@ func _play_movement_animation(move_amount: float) -> void:
 	# If the animation names don't exist, avoid errors
 	var has_idle := anim_player.has_animation(ANIM_IDLE)
 	var has_walk := anim_player.has_animation(ANIM_WALK)
-	var has_run := anim_player.has_animation(ANIM_RUN)
 
 	if move_amount > 0.0:
-		if is_sprinting and has_run:
-			if anim_player.current_animation != ANIM_RUN:
-				anim_player.play(ANIM_RUN)
-		elif has_walk:
+		if has_walk:
 			if anim_player.current_animation != ANIM_WALK:
 				anim_player.play(ANIM_WALK)
 	else:
 		if has_idle and anim_player.current_animation != ANIM_IDLE:
 			anim_player.play(ANIM_IDLE)
-
-
-# === INTERNAL: startup validation (nodes, inputs, animations) ===
-func _validate_setup() -> void:
-	# Node checks
-	if camera == null:
-		push_warning("Camera3D is missing.")
-	if anim_player == null:
-		push_warning("AnimationPlayer is missing.")
-	if interact_cast == null:
-		push_warning("Interact RayCast3D is missing.")
-	if interact_text == null:
-		push_warning("InteractText Label is missing.")
-
-	# InputMap checks
-	var required_actions: Array[String] = [
-		ACTION_MOVE_FWD, ACTION_MOVE_BACK, ACTION_MOVE_LEFT, ACTION_MOVE_RIGHT,
-		ACTION_INTERACT, ACTION_SPRINT
-	]
-	for a in required_actions:
-		if not InputMap.has_action(a):
-			push_warning("Input action not found: %s" % a)
-
-	# Animation name checks (only if anim_player exists)
-	if anim_player != null:
-		var names_ok := true
-		for n in [ANIM_IDLE, ANIM_WALK, ANIM_RUN]:
-			if not anim_player.has_animation(n):
-				names_ok = false
-				push_warning("Missing animation: %s" % n)
-		if names_ok == false:
-			push_warning("Consider renaming or adding animations to match constants.")

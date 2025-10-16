@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=32 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dspi0h2j6fhka" path="res://scenes/key.tscn" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://cjp2blyk8xe4f" path="res://assets/Minutehand.glb" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://cyjwn0vyyirfr" path="res://scenes/player2.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://dmfvu2lc7km5u" path="res://scenes/InteractTest.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://6ncjq6k63jh3" path="res://scenes/NPC.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://o35u2frex3it" path="res://scenes/tree.tscn" id="14_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://b6vyrhcavq676" path="res://assets/Main Scene.mp3" id="15_jkv2x"]
@@ -62,6 +61,7 @@ albedo_color = Color(0.3112322, 0.24692634, 0, 1)
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("13_trceg")]
 transform = Transform3D(-0.845493, 0.068205, 0.0686203, 0.0684278, 0.848255, 0, -0.0683981, 0.0055176, -0.84824, 14.7757, -2.20863, -350.55692)
+start_node = "start"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-1835.39, 0, 0, 0, 1.50905, -1.7998402e-14, 0, 1.84304e-11, 1142.31, 95.6556, -7.04685, -101.228)
@@ -178,10 +178,6 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("11_ya4ey")]
 transform = Transform3D(-0.99911, 0, 0.0421896, 0, 1, 0, -0.0421896, 0, -0.99911, 14.9351, -0.267011, -338.86816)
-
-[node name="Area3D" parent="." instance=ExtResource("12_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -353.5791)
-script = null
 
 [node name="Trees" type="Node3D" parent="."]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 0.004673, -6.01113, -375.85934)

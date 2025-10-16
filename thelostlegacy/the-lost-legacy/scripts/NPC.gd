@@ -1,87 +1,83 @@
-extends Area3D
+extends CharacterBody3D
 
-# === CONSTANTS (no magic strings) ===
-# Defaults and warnings for safer behaviour.
+# === CONSTANTS ===
 const DEFAULT_START_NODE: String = "start"
-const WARNING_NO_DIALOGUE: String = "Dialogue resource not set!"
-const WARNING_NO_BALLOON: String = "Failed to open dialogue balloon."
-const WARNING_NO_FINISH_SIGNAL: String = "Dialogue balloon has no finish signal."
 
-# Cooldown so the player can’t reopen the balloon immediately after closing.
-const TALK_COOLDOWN: float = 0.5
-
-
-# === EXPORTED VARIABLES ===
-# Dialogue resource to use and the starting node id.
+# === EXPORTED PROPERTIES ===
 @export var dialogue_resource: DialogueResource
 @export var start_node: String = DEFAULT_START_NODE
+@export var talk_cooldown: float = 0.5   # seconds between allowed opens
 
+# Optional: if you connect an Area3D->body_entered signal to _on_body_entered(),
+# this will auto-start dialogue when the Player walks into the NPC's trigger.
+@export var auto_trigger_from_area: bool = true
 
 # === STATE ===
-# Prevents opening multiple balloons at once and handles post-close cooldown.
-var is_talking: bool = false
-var talk_cooldown_left: float = 0.0
+var _is_talking: bool = false
+var _cooldown_left: float = 0.0
 
 
-# === LIFECYCLE ===
-# Count down the anti-spam cooldown.
 func _process(delta: float) -> void:
-	if talk_cooldown_left > 0.0:
-		talk_cooldown_left = max(0.0, talk_cooldown_left - delta)
+	# Cooldown tick
+	if _cooldown_left > 0.0:
+		_cooldown_left = max(0.0, _cooldown_left - delta)
 
 
-# === INTERACTION ENTRYPOINT ===
-# Called by the player when the raycast hits this node and the user presses Interact.
+# Call this from your Player raycast when pressing "E" on the NPC.
 func interact() -> void:
-	# --- VALIDATION: Dialogue data must exist and game must be ready to talk ---
-	if dialogue_resource == null:
-		push_warning(WARNING_NO_DIALOGUE)
-		return
-	if is_talking or talk_cooldown_left > 0.0:
+	# Block if another dialogue is active, we're cooling down, or already open
+	if _is_talking or _cooldown_left > 0.0:
 		return
 	if Global.in_dialogue:
 		return
 
-	# Fallback to a safe default start node.
-	if start_node.is_empty():
-		start_node = DEFAULT_START_NODE
+	# Validate dialogue resource
+	if dialogue_resource == null:
+		push_warning("Dialogue resource not set on NPC.")
+		return
 
-	# --- START DIALOGUE BALLOON ---
-	is_talking = true
+	# Clean / safe start node
+	var from_node := start_node.strip_edges()
+	if from_node.is_empty():
+		from_node = DEFAULT_START_NODE
+
+	# Open balloon
+	_is_talking = true
 	Global.in_dialogue = true
 
-	var balloon: Node = DialogueManager.show_dialogue_balloon(dialogue_resource, start_node)
+	var balloon: Node = DialogueManager.show_dialogue_balloon(dialogue_resource, from_node)
 
-	# --- VALIDATION: Ensure balloon was created ---
+	# If the balloon couldn't be created, reset safely
 	if balloon == null:
-		push_warning(WARNING_NO_BALLOON)
+		push_warning("Failed to open dialogue balloon. Check Dialogue Manager settings (balloon scene).")
 		_reset_dialogue_state()
 		return
 
-	# --- CONNECT END EVENTS SAFELY (cover addon variants) ---
+	# Connect whichever finish signal exists
 	if balloon.has_signal("dialogue_finished"):
 		balloon.dialogue_finished.connect(_on_dialogue_end)
 	elif balloon.has_signal("tree_exited"):
 		balloon.tree_exited.connect(_on_dialogue_end)
 	else:
-		push_warning(WARNING_NO_FINISH_SIGNAL)
+		push_warning("Dialogue balloon has no finish signal; resetting state.")
 		_reset_dialogue_state()
 
 
-# === CLEANUP ===
-# Resets flags when the dialogue sequence ends.
 func _on_dialogue_end() -> void:
 	_reset_dialogue_state()
 
 
-# === INTERNAL UTILITY ===
-# Centralised reset to keep code DRY and readable.
 func _reset_dialogue_state() -> void:
-	is_talking = false
+	_is_talking = false
 	Global.in_dialogue = false
-	talk_cooldown_left = TALK_COOLDOWN
+	_cooldown_left = talk_cooldown
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
-		
+# OPTIONAL: hook your Area3D's "body_entered" to this if you want auto-start on proximity.
+# The NPC scene needs an Area3D + CollisionShape3D for this to fire.
+func _on_body_entered(body: Node3D) -> void:
+	if not auto_trigger_from_area:
+		return
+	# Match by name or put your Player in a "player" group and check body.is_in_group("player")
+	if body.name == "Player" and not Global.in_dialogue:
+		interact()
