@@ -1,11 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dbard410k803t"]
+[gd_scene load_steps=30 format=3 uid="uid://dbard410k803t"]
 
 [ext_resource type="Texture2D" uid="uid://7f7pu0m44cnu" path="res://assets/grass.jpg" id="1_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://brqepw04j22ex" path="res://assets/crosshair001.png" id="2_0wfyh"]
 [ext_resource type="Material" uid="uid://b68pi4n8k0k7f" path="res://assets/day_sky.tres" id="3_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://puack7hx5abi" path="res://scenes/clock-puzzle.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://l1bcynwsgq0v" path="res://scripts/clock_puzzle.gd" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://d1stqbyrogtw" path="res://scenes/another-clock-puzzle.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://rq6utmehbp4h" path="res://assets/Clockpuzzle.glb" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://bb1m5426ymk4w" path="res://assets/Hourhand.glb" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dspi0h2j6fhka" path="res://scenes/key.tscn" id="7_choun"]
@@ -61,24 +59,26 @@ albedo_color = Color(0.3112322, 0.24692634, 0, 1)
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("13_trceg")]
 transform = Transform3D(-0.845493, 0.068205, 0.0686203, 0.0684278, 0.848255, 0, -0.0683981, 0.0055176, -0.84824, 14.7757, -2.20863, -350.55692)
+visible = false
 start_node = "start"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(-1835.39, 0, 0, 0, 1.50905, -1.7998402e-14, 0, 1.84304e-11, 1142.31, 95.6556, -7.04685, -101.228)
 size = Vector3(0.886478, 1, 1.43221)
 material = SubResource("StandardMaterial3D_o5qli")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, -1.511, -9.22823e-08, 0, 2.28155e-07, -0.611158, -0.000897421, 0, -0.00149202)
 shape = SubResource("BoxShape3D_o5qli")
 
-[node name="Area3D2" type="Area3D" parent="CSGBox3D/CollisionShape3D"]
+[node name="Area3D2" type="Area3D" parent="Ground/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 7.10543e-15, 0, 2.84217e-14, 1, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o5qli")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="crosshair" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -112,18 +112,9 @@ grow_vertical = 2
 texture = ExtResource("2_0wfyh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Interaction Test" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000699997, 0, -339.8461)
-
-[node name="Node3D" parent="Interaction Test" instance=ExtResource("3_sugp2")]
-script = null
-
-[node name="Node3D2" parent="Interaction Test" instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.58445)
-script = null
-
 [node name="Clockpuzzle" parent="." node_paths=PackedStringArray("hour_hand", "minute_hand", "minute_hand_timer", "hour_hand_timer") instance=ExtResource("6_tipki")]
 transform = Transform3D(3.2507832, 0, 0, 0, 3.2507832, 0, 0, 0, 3.2507832, 47.10798, 0, 75.83421)
+visible = false
 script = ExtResource("3_tbgi4")
 hour_hand = NodePath("Hourhand")
 minute_hand = NodePath("Minutehand")
@@ -174,13 +165,14 @@ initial_velocity_max = 76.94
 
 [node name="Key" parent="." instance=ExtResource("7_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.805954, -0.16808271, 58.068897)
-visible = false
 
 [node name="Player" parent="." instance=ExtResource("11_ya4ey")]
 transform = Transform3D(-0.99911, 0, 0.0421896, 0, 1, 0, -0.0421896, 0, -0.99911, 14.9351, -0.267011, -338.86816)
+visible = false
 
 [node name="Trees" type="Node3D" parent="."]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 0.004673, -6.01113, -375.85934)
+visible = false
 
 [node name="Area3D2" parent="Trees" instance=ExtResource("14_a8y0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -8916,6 +8908,7 @@ autoplay = true
 
 [node name="Signpost" parent="." instance=ExtResource("18_yc10j")]
 transform = Transform3D(3.1383266, 0, -11.828758, 0, 12.237999, 0, 11.828758, 0, 3.1383266, 80.80138, -4, -73.03583)
+visible = false
 
 [node name="Fences" type="Node" parent="."]
 
@@ -10094,13 +10087,16 @@ transform = Transform3D(4.9782205, 0, 0.07101314, 0, 5.0000005, 0, -0.049265407,
 
 [node name="Gate" parent="." instance=ExtResource("20_jscy8")]
 transform = Transform3D(-2.6226834e-07, 0, -6.0000005, 0, 6, 0, 6.0000005, 0, -2.6226834e-07, 213.843, -4, -42.816)
+visible = false
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.11452, -6.7669015, -41.906757)
+visible = false
 material_override = SubResource("StandardMaterial3D_og1vs")
 size = Vector3(39.54489, 1, 17.410019)
 
 [node name="Roses" type="Node3D" parent="."]
+visible = false
 
 [node name="Red Rose" parent="Roses" instance=ExtResource("21_pm3ni")]
 transform = Transform3D(6.27116, 0, 0, 0, 6.27116, 0, 0, 0, 6.27116, 263.34732, -6.4733124, 80.44408)
@@ -10488,6 +10484,7 @@ transform = Transform3D(-0.26687396, 0, -6.265479, 0, 6.27116, 0, 6.265479, 0, -
 
 [node name="Pedestal" parent="." instance=ExtResource("23_pm3ni")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 335.97974, -6.473, 9.742)
+visible = false
 
 [node name="Houses" type="Node" parent="."]
 

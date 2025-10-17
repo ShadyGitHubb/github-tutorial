@@ -12,9 +12,9 @@ const INTERACT_RANGE: float = 3.0
 const CAM_BOB_FREQ_MIN: float = 1.0
 const CAM_BOB_FREQ_MAX: float = 8.0
 const CAM_BOB_AMP_MIN: float = 0.01
-const CAM_BOB_AMP_MAX: float = 0.05
+const CAM_BOB_AMP_MAX: float = 0.03
 const STRAFE_ROLL_PER_UNIT: float = 2.0     # deg per strafe strength
-const ROLL_LERP: float = 0.1
+const ROLL_LERP: float = 0.05
 
 # UI / Anim names
 const INTERACT_PROMPT: String = "Press [E] to interact"
@@ -32,7 +32,7 @@ const ACTION_SPRINT := "sprint"
 # === PLAYER VARIABLES ===
 var speed: float = DEFAULT_SPEED
 var sprint_speed: float = DEFAULT_SPRINT_SPEED
-var sensitivity: float = 0.002
+var sensitivity: float = 0.00015
 var look_up_limit: float = 80.0
 var look_down_limit: float = 80.0
 
